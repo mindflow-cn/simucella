@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 240" role="img" aria-labelledby="title desc">
+  <title id="title">Simucella</title>
+  <desc id="desc">An organic cell-shaped mark with an S-shaped state trajectory and a coral perturbation point, paired with the Simucella wordmark.</desc>
+  <defs>
+    <mask id="simucella-s-cut">
+      <rect width="240" height="240" fill="#fff"/>
+      <path d="M168 65 C149 46 116 44 92 57 C69 69 66 92 86 104 C104 115 136 106 154 122 C175 140 167 169 144 184 C119 199 84 194 64 173"
+            fill="none" stroke="#000" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <g aria-label="Simucella symbol">
+    <path d="M116 22 C171 23 207 61 208 116 C207 172 167 209 113 210 C58 208 21 168 20 114 C22 59 62 23 116 22 Z"
+          fill="#0D7757" mask="url(#simucella-s-cut)"/>
+    <circle cx="168" cy="65" r="9" fill="#E26D5A"/>
+  </g>
+  <text x="252" y="151" font-family="Inter, Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="82" font-weight="600" letter-spacing="0">
+    <tspan fill="#0C1A15">Simu</tspan><tspan fill="#0D7757">cella</tspan>
+  </text>
+</svg>

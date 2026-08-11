@@ -2,15 +2,17 @@
 
 ## 1. Page Goal
 
-This page introduces the scDrugPerturb-Bench paper as a focused research story within the broader Simucella project. It should not reproduce the manuscript section by section. Instead, it should explain the scientific question, show why the benchmark is needed, summarize the principal findings and direct visitors to the paper, code, benchmark and citation.
-
-The central message is:
+The paper page should make one argument, not reproduce the manuscript section by section:
 
 > **Expression reconstruction is not mechanism recovery.**
 
-Supporting message:
+The page should establish three linked claims:
 
-> Single-cell drug perturbation models should be evaluated not only by how closely they reconstruct expression profiles, but also by whether they recover case-specific drug mechanisms in the correct genes, pathways and directions.
+1. Mechanism Fidelity Score (MFS) measures information that traditional expression-reconstruction metrics do not capture.
+2. Changing the evaluation target changes which model appears best.
+3. Current models reconstruct expression much better than they recover case-specific mechanisms.
+
+MFS should always be presented as an important **complement** to traditional metrics, not as a universal replacement for them.
 
 ## 2. Intended Audience
 
@@ -26,33 +28,137 @@ Supporting message:
 Content:
 
 - Paper title: *Do single-cell drug perturbation models recover mechanisms beyond expression reconstruction?*
-- One-sentence conclusion
+- One-sentence conclusion: `Expression reconstruction is not mechanism recovery.`
 - Author list and affiliations
 - Simucella / HITSZ / MindFlow.AI identity
 - Paper status, publication venue or preprint information
 - Primary actions: `Paper`, `Code`, `Benchmark`, `Citation`
 
-Recommended visual:
+Layout and typography:
 
-- Use the Figure 2a mechanism-mismatch case as the main visual signal.
-- Do not place the complete Figure 1 in the hero because its small labels are too dense at normal webpage width.
+- Use a compact title scale: `48-54 px` on desktop and `34-40 px` on mobile.
+- Keep the hero text-led and shallow enough that the first evidence section is visible in the initial viewport.
+- Do not place a scientific figure in the hero.
+- Do not include a `Figure resources` button.
+- Hide unavailable actions rather than linking to placeholders.
 
-### 3.2 The Evaluation Gap
+### 3.2 At a Glance: A Three-Visual Argument
 
-Section question:
+This is the main body of the page. It should occupy most of the editorial attention and contain only three large scientific visuals. The visuals form a continuous evidence chain:
 
-> Does an expression-like prediction imply that a model has learned the drug mechanism?
+> **Different question → different winner → unresolved model weakness**
 
-Use the T0901317-treated human iPSC-derived microglia example. The measured response upregulates the LXR target genes `ABCA1`, `ABCG1`, `APOE` and `ACSL1`, whereas the evaluated model predicts the opposite direction for all four genes at 30 nM and 100 nM despite high expression-similarity scores.
+The original manuscript panels are source material for these redraws. They should not be pasted into the primary scroll as separate figures.
 
-Recommended visual:
+#### Visual 1 — High expression similarity can mask mechanism failure
 
-- Figure 2a as a dedicated, readable panel
-- A short comparison between `High expression similarity` and `Incorrect mechanism direction`
+Claim:
 
-### 3.3 scDrugPerturb-Bench At a Glance
+> **A prediction can look expression-like while recovering little of the case-specific mechanism.**
 
-Headline statistics:
+Final composition:
+
+- Draw only the PCS–MSE relationship; do not combine it with other metric pairs or a biological case inset.
+- Main plot:
+  - x-axis: similarity-based score derived from MSE.
+  - y-axis: Pattern Consistency Score (PCS).
+  - Each point represents one evaluated perturbation case.
+  - Model families are encoded with restrained marker shapes rather than many colours.
+- Highlight the high-MSE/low-PCS quadrant as `expression-like, mechanism-low`.
+- Show the exact PCS and MSE thresholds with subtle dashed lines and a pale coral background band.
+- Add one clean zoom of the highlighted quadrant outside the main plotting area.
+- Use the real headline count from the current analysis: `399/683 cases`, `58.4% [55-62]`.
+- Keep the title declarative: `High expression similarity can mask mechanism failure`.
+
+Recommended real-data redraw:
+
+- Use the PCS–MSE panel structure as the data reference, but redraw it as a single website-native composition.
+- Retain every real case and its model-family identity; do not estimate points from the SVG.
+- Calculate the highlighted count and confidence interval from the source table rather than hard-coding the displayed result.
+- Keep the full `0-1` axes so the threshold region is not exaggerated by cropping.
+- The zoom is supporting evidence only; it must not obscure the original points or thresholds.
+
+Interpretation boundary:
+
+- Low PCS indicates poor directional recovery of annotated mechanism genes; it does not by itself prove every part of the predicted mechanism is reversed.
+- Describe PCS/MFS as complementary to reconstruction metrics, not a replacement for expression reconstruction.
+- Report the denominator, threshold definitions and interval method alongside the final chart.
+
+Current simulated concept:
+
+- `design-drafts/claim-1-complementary-metrics.svg`
+- The current version uses 683 simulated cases and reproduces the intended `399/683` highlighted composition. Replace every point with the verified source data before publication.
+
+#### Visual 2 — The evaluation target changes which model appears best
+
+Claim:
+
+> **A reconstruction-only leaderboard can select the wrong model for mechanism-oriented use.**
+
+Final composition:
+
+- A slopegraph or rank-flow chart linking each model's ESS rank to its MFS rank.
+- Highlight the ESS winner in blue and the MFS winner in green; keep other models neutral.
+- Put the aggregate results directly above or beside the chart:
+  - MFS and ESS selected different top models in all five cell-line splits.
+  - Median model-rank correlation: `-0.104`.
+  - ESS recovered the MFS-optimal model at Hit@3 of only `0.176`.
+- If the slopegraph shows one representative split, label the split in content-based language and keep the five-split statistics visible as the primary evidence.
+
+Recommended real-data redraw:
+
+- Calculate ranks from the same model set and split before drawing connections.
+- Show ties explicitly and document the tie-breaking rule.
+- A small split selector may be added later, but the default static view must communicate the result without interaction.
+- Do not create a conventional dense leaderboard table in the main scroll.
+
+Current simulated concept:
+
+- `design-drafts/claim-2-ranking-shift.svg`
+
+#### Visual 3 — Current models recover mechanisms poorly
+
+Claim:
+
+> **Reasonable reconstruction scores coexist with low mechanism fidelity and common shortcut failures.**
+
+Final composition:
+
+- Left: a model-level reconstruction-versus-mechanism comparison that makes the gap immediately visible.
+- Right: a compact prevalence chart for the dominant failure modes, especially signature-specificity and generic-response shortcuts.
+- Use the real failure evidence as the headline:
+  - Overall shortcut/failure burden: `44.6-61.5%`.
+  - Signature-specificity failure: `84.3-99.9%`.
+  - Generic-response shortcut: `54.3-88.9%`.
+  - Median true-signature-first fraction: approximately `1.9%`.
+  - Median strength-controlled discrimination accuracy: approximately `48.7%`.
+
+Recommended real-data redraw:
+
+- Do not place ESS and MFS on one numerical axis unless their transformation creates a genuinely comparable scale.
+- Preferred options are two aligned axes, a clearly defined fraction-of-achievable-range scale, or a reconstruction/MFS plane with separate labeled axes.
+- Show uncertainty across seeds, folds or splits where available.
+- Put denominators and the definition of each failure rate in the methods tooltip or expandable note.
+- Preserve the distinction between an incorrect mechanism and a zero-response collapse; the benchmark observed `0%` no-change collapse for all evaluated methods.
+
+Current simulated concept:
+
+- `design-drafts/claim-3-mechanism-failure.svg`
+- Its shared normalized axis is illustrative only and must not be retained unless the real normalization is scientifically justified.
+
+#### Section rhythm
+
+- Each visual starts with a short declarative heading and one sentence of interpretation.
+- Alternate text and visual alignment on wide screens, but keep the scientific chart at least 60% of the content width.
+- On mobile, stack heading → one-sentence claim → chart → two-line interpretation.
+- Avoid cards around every item. The three visuals should feel like consecutive chapters of one argument.
+- Do not display figure numbers or panel letters in headings, captions, buttons, alt text or image labels.
+
+### 3.3 Why the Benchmark Is Credible
+
+This section supports the three claims without adding another large scientific figure.
+
+Use live HTML statistics and a restrained curation-to-evaluation flow:
 
 | Statistic | Value |
 | --- | ---: |
@@ -68,148 +174,47 @@ Headline statistics:
 | Directionally annotated response cases | 423 |
 | Model evaluations | 4,500 |
 
-Response-case composition:
+Supporting scope:
 
-- 195 upregulated
-- 126 downregulated
-- 102 non-significant
-
-Recommended visual treatment:
-
-- Split Figure 1 into three responsive blocks:
-  1. Literature-to-matrix data curation
-  2. Benchmark evaluation pipeline
-  3. Dataset coverage and composition
-- Keep the statistics as live HTML text rather than baking them into an image.
-
-### 3.4 What the Benchmark Evaluates
-
-Benchmark scope:
-
-- 12 published perturbation-prediction models
-- 3 baselines
+- 12 published perturbation-prediction models and 3 baselines
 - 10 data splits
 - Raw expression plus 9 representation methods
 - 8 frozen single-cell foundation models plus PCA
-- 7 expression-similarity metrics
-- 6 mechanism-fidelity metrics
+- 7 expression-similarity metrics and 6 mechanism-fidelity metrics
 
-Generalization regimes:
+Use a single CSS/HTML flow line for `literature → curated mechanisms → perturbation matrix → model evaluation`. Do not add the full manuscript overview figure to the main narrative.
 
-- Cell-line regime: IID-sample, OOD-drug, OOD-cell, OOD-tissue and OOD-drug-cell-pair
-- Source regime: IID-sample and held-out experimental-source settings
+### 3.4 What MFS Measures
 
-Mechanism Fidelity Score components:
+Present the six MFS components as compact HTML rows or an expandable glossary:
 
-| Metric | Question |
+| Metric | Evaluation question |
 | --- | --- |
-| Pattern Consistency Score (PCS) | Are the annotated key genes changed in the correct direction? |
-| Effect Size Recovery (ESR) | Is the predicted response magnitude calibrated to the measured effect? |
-| Gene-set Coherence Score (GCS) | Are mechanism genes predicted as a coordinated response? |
-| Mechanism Specificity Score (MSS) | Is signal concentrated on mechanism-relevant genes rather than matched background genes? |
+| Pattern Consistency Score | Are annotated key genes changed in the correct direction? |
+| Effect Size Recovery | Is the predicted response magnitude calibrated to the measured effect? |
+| Gene-set Coherence Score | Are mechanism genes predicted as a coordinated response? |
+| Mechanism Specificity Score | Is signal concentrated on mechanism-relevant genes rather than matched background genes? |
 | Pathway Spearman | Are predicted and observed pathway-enrichment profiles concordant? |
 | Pathway Sign Accuracy | Are activated and suppressed pathways assigned the correct polarity? |
 
-The website should present these definitions as compact HTML components. A full screenshot of the metric diagram should remain optional.
+This section explains the metric; it should not introduce another large image.
 
-### 3.5 Main Finding: Expression Similarity Does Not Imply Mechanism Fidelity
+### 3.5 Why the Distinction Matters
 
-Key results:
+Use one short downstream-validation paragraph and a live HTML number strip rather than a fourth full-width plot:
 
-- Across 175 expression-mechanism metric comparisons, median Spearman correlation was `0.052`.
-- Median absolute correlation was `0.241`.
-- `58.9%` of absolute correlations were below `0.3`.
-- `88.6%` were below `0.5`.
-- MFS and ESS never selected the same top-ranked model across the five cell-line splits.
-- Their median model-rank correlation was `-0.104`.
-- ESS recovered the MFS-optimal model at Hit@3 of only `0.176`.
-
-Recommended panels:
-
-- Figure 2c: metric correlations
-- Figure 2d: different model rankings
-- Figure 2f: mechanism loss under expression-based model selection
-
-The website copy should distinguish non-redundancy from opposition: weak or unstable alignment does not mean every expression metric is negatively associated with mechanism fidelity.
-
-### 3.6 Downstream Relevance for Drug Screening
-
-Explain how MFS- and ESS-selected representations were evaluated with a fixed CURE-based compound-retrieval workflow.
-
-Key results:
-
-- Top-1 near-oracle representation recovery increased from `26.7%` with ESS to `40.0%` with MFS.
-- Top-3 recovery increased from `73.3%` to `80.0%`.
-- Top-5 recovery increased from `86.7%` to `93.3%`.
+- Top-1 near-oracle representation recovery: `26.7%` with ESS versus `40.0%` with MFS.
+- Top-3 recovery: `73.3%` versus `80.0%`.
+- Top-5 recovery: `86.7%` versus `93.3%`.
 - At mechanism weight `r = 0.9`, Hit@5, Hit@10 and Hit@50 improved by `27.3%`, `16.7%` and `9.3%` relative to ESS-based selection.
-- In the etoposide example, the MFS-selected representation reached Hit@50 of `1.0`, compared with `0.2` for the ESS-selected representation.
-
-Recommended panels:
-
-- Figure 3d: near-oracle selection
-- Figure 3e: MFS-weight sensitivity
-- Figure 3f: etoposide retrieval case study
 
 Claim boundary:
 
-The paper reports an aggregate and context-dependent advantage. The paired comparison was not statistically significant after correction. Website language should therefore use formulations such as `more informative in aggregate` or `better aligned in selected settings`, rather than claiming universal superiority.
+- Describe MFS as `more informative in aggregate` or `better aligned in selected settings`.
+- The paired comparison was not statistically significant after correction, so do not claim universal downstream superiority.
+- The etoposide example may appear as an optional expandable case, not as a fourth main visual.
 
-### 3.7 Model and Representation Landscape
-
-Main messages:
-
-- Absolute mechanism recovery remains weak across cell-line and cross-source settings.
-- No single perturbation predictor or representation dominates across metrics and splits.
-- Frozen single-cell foundation-model embeddings do not provide a universal mechanism-enhancing input.
-- Representation gains are local, metric dependent and strongly shaped by the downstream predictor.
-- Raw expression and PCA remain competitive in multiple settings.
-- Model choice should account for GPU runtime, peak RAM and peak GPU memory as separate constraints.
-
-Recommended use of figures:
-
-- Keep Figures 4 and 5 out of the primary narrative flow at full size.
-- Use selected panels as a secondary results section:
-  - Figure 4a: cell-line evaluation design
-  - Figure 4b: absolute mechanism-fidelity landscape
-  - Figure 4e: embedding-predictor gain map
-  - Figure 5a: cross-source evaluation design
-  - Figure 5b: cross-source mechanism-fidelity landscape
-  - Figure 5e: cross-source gain map
-- Provide complete Figures 4 and 5 in a click-to-zoom figure gallery.
-
-### 3.8 Shortcut and Failure Modes
-
-Use hard negatives to explain why plausible non-zero responses may still fail to recover the current case-specific mechanism.
-
-Failure modes:
-
-- Mean-response memorization
-- Direction failure
-- Magnitude mismatch
-- Generic-response shortcut
-- Signature-specificity failure
-- Global-strength shortcut
-
-Key results:
-
-- Overall shortcut and failure burden ranged from `44.6%` to `61.5%`.
-- No-change collapse was `0%` for all evaluated methods.
-- Signature-specificity failure ranged from `84.3%` to `99.9%`.
-- Generic-response shortcut ranged from `54.3%` to `88.9%`.
-- No model had a positive median signature-specificity gap.
-- The median true-signature-first fraction across methods was approximately `1.9%`.
-- Median strength-controlled discrimination accuracy was approximately `48.7%`.
-
-Recommended panels:
-
-- Figure 6a: overview of failure burden
-- Figure 6d: generic-response shortcut
-- Figure 6e: non-matching signature decoys
-- Figure 6f: strength-matched decoys
-
-### 3.9 Scope and Limitations
-
-The website should include a concise, visible limitations section rather than hiding limitations in the publication footer.
+### 3.6 Scope and Limitations
 
 - Literature-curated mechanism genes are incomplete and biased toward well-studied biology.
 - The benchmark evaluates transcriptional mechanism fidelity, not direct target engagement, protein activity, phenotypic rescue or clinical efficacy.
@@ -218,7 +223,7 @@ The website should include a concise, visible limitations section rather than hi
 - scFMs were evaluated as frozen representations rather than with fine-tuning or end-to-end adaptation.
 - Dataset coverage is uneven across drugs, doses, times and cellular states.
 
-### 3.10 Open Resources and Citation
+### 3.7 Open Resources and Citation
 
 Include:
 
@@ -232,56 +237,60 @@ Include:
 - License and contact information
 - Link back to the Simucella project homepage
 
-## 4. Figure Asset Requirements
+### 3.8 Optional Evidence Gallery
 
-### 4.1 First Batch: Required for the Main Page
+- Keep complete manuscript figures outside the primary narrative.
+- Expose them through a collapsed `Explore all results` section or separate resources page.
+- Use content-based labels, not manuscript figure numbers, in the public interface.
+- The gallery is supporting evidence and must not interrupt the three-visual argument.
 
-1. Figure 1, preferably as separate panels `a-d`
-2. Figure 2 panels `a`, `c` and `f`
-3. Figure 3 panels `d`, `e` and `f`
-4. Figure 6 panels `a`, `d`, `e` and `f`
+## 4. Real-Data Requirements for the Three Redraws
 
-### 4.2 Second Batch: Full Results Coverage
+### 4.1 Complementarity visual
 
-1. Figure 4 panels `a`, `b` and `e`, plus the complete figure
-2. Figure 5 panels `a`, `b` and `e`, plus the complete figure
-3. Selected supplementary figures for an expandable analysis gallery, if needed
+- One row per displayed perturbation case
+- MSE-derived similarity score and PCS value for every row
+- Model-family label and stable case identifier
+- Exact MSE and PCS threshold definitions
+- Highlighted-case flag or the inputs required to recalculate it
+- Numerator, denominator and confidence-interval method for `399/683` and `58.4% [55-62]`
+- Any filtering, missing-value handling and score clipping applied before plotting
 
-### 4.3 Preferred Formats
+### 4.2 Ranking-shift visual
 
-Format priority:
+- Model-level ESS and MFS aggregates for every displayed split
+- Model names, baseline labels, rank values and tie information
+- Per-split top model, Top-3 set, rank correlation and Hit@3 calculation
+- Seed/fold summaries or uncertainty when available
 
-1. Separate-panel SVG or genuinely vector-based PDF
-2. Original PPTX, AI, EPS, Figma or plotting source
-3. Lossless PNG or TIFF, preferably 2x/3x web display resolution and at least 2,500-3,000 px wide per dense panel
+### 4.3 Mechanism-failure visual
 
-Avoid screenshots, messaging-app-compressed images and JPEG exports.
+- Model-level ESS and MFS summaries with the exact aggregation and normalization definitions
+- Per-model/per-split uncertainty
+- Failure-mode numerator, denominator and prevalence for every method
+- Baseline and no-change-collapse results
+- Definitions for signature-specificity, generic-response, global-strength, magnitude and direction failures
 
-The current Figure 1-6 PDFs each contain a single 300 dpi JPEG rather than fully vectorized plot elements. They are adequate for manuscript rendering, but dense labels can become blurred or unreadable after responsive webpage scaling. Separate panels are more important than simply increasing the resolution of the complete figure.
+## 5. Simulated Storyboard Deliverables
 
-## 5. Responsive Figure Strategy
+All current values are synthetic placeholders and every draft is visibly marked `SIMULATED DATA | CONCEPT DRAFT`.
 
-- Do not display dense full-page figures at normal article width and expect labels to remain readable.
-- Use panel-level crops in the narrative.
-- Keep statistical values and explanatory labels as HTML text wherever possible.
-- Provide full figures through click-to-zoom or a lightbox.
-- Use mobile-specific stacking for multi-panel comparisons.
-- Export web assets as WebP or AVIF with PNG fallback after receiving the master files.
-- Preserve scientific figure colors unless accessibility or contrast checks require small adjustments.
+- `design-drafts/claim-1-complementary-metrics.png` and `.svg`
+- `design-drafts/claim-2-ranking-shift.png` and `.svg`
+- `design-drafts/claim-3-mechanism-failure.png` and `.svg`
+- `design-drafts/simulated_storyboard.py`
+- `design-drafts/source-data/*.csv`
 
-## 6. Required Project Information
+The SVG files retain editable text. The Python script is the single rendering source for both SVG and PNG outputs.
 
-Before implementation, confirm:
+## 6. Visual and Implementation Rules
 
-- Final author list and author order
-- Affiliations and corresponding authors
-- Paper status: manuscript, preprint, accepted or published
-- Publication venue, date, DOI and/or arXiv identifier
-- Paper PDF URL
-- Code repository URL
-- Dataset and benchmark download URL
-- Citation / BibTeX
-- License
-- Contact email
-- Preferred acknowledgement of HITSZ and MindFlow.AI
-- Whether a public leaderboard will be included in the first release
+- Main narrative budget: exactly three large scientific visuals.
+- Use blue for expression reconstruction, green for mechanism fidelity, coral for critical mismatch/failure and neutral grey for context.
+- Do not rely on red/green alone; use text labels, position and line structure as redundant encodings.
+- Keep all key numbers as live HTML where possible, even when echoed in a chart.
+- Use SVG for primary charts and responsive PNG/WebP fallbacks only when needed.
+- Preserve editable text in SVG exports.
+- Public-facing labels must be content-based; internal asset filenames may retain manuscript panel identifiers.
+- All simulated drafts must remain clearly labeled until they are replaced by verified real-data exports.
+- Document metric definitions, splits, seeds/folds, uncertainty and baselines alongside the final quantitative redraws.

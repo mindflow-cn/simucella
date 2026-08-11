@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="scDrugPerturb-Bench tests whether single-cell drug perturbation models recover mechanisms beyond expression reconstruction.">
+  <meta property="og:title" content="scDrugPerturb-Bench | Simucella">
+  <meta property="og:description" content="Expression reconstruction is not mechanism recovery.">
+  <meta property="og:image" content="assets/pcs-mse-main.png">
+  <title>scDrugPerturb-Bench | Simucella</title>
+  <link rel="stylesheet" href="paper.css?v=20260811-2">
+</head>
+<body>
+  <a class="paper-skip" href="#paper-main">Skip to content</a>
+  <header class="paper-header">
+    <nav class="paper-nav" aria-label="Paper navigation">
+      <a class="paper-brand" href="index.html"><img class="paper-logo" src="assets/simucella-logo.svg" alt="Simucella"></a>
+      <button class="paper-menu" type="button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
+      <div class="paper-nav-links">
+        <a href="#benchmark">At a glance</a>
+        <a href="#complement">Why MFS</a>
+        <a href="#models">Model weakness</a>
+        <a href="#scope">Scope</a>
+        <a class="paper-home" href="index.html">Simucella home</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="paper-main">
+    <section class="paper-hero">
+      <div class="paper-hero-inner">
+        <div class="paper-eyebrow">scDrugPerturb-Bench / Research paper</div>
+        <h1>Do single-cell drug perturbation models recover mechanisms beyond expression reconstruction?</h1>
+        <p class="paper-deck"><strong>Expression reconstruction is not mechanism recovery.</strong> We test whether predicted responses recover the case-specific genes, pathways and directions that explain a drug perturbation.</p>
+        <div class="paper-hero-actions"><a class="paper-action paper-action-primary" href="#benchmark">Explore the benchmark <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="paper-hero-meta" aria-label="Project metadata"><span>Simucella research program</span><span>HITSZ x MindFlow.AI</span><span>Mechanism-aware evaluation</span></div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt" id="benchmark">
+      <div class="paper-container">
+        <div class="paper-section-head paper-section-head-empty">
+          <div class="paper-kicker">At a glance</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section" id="complement">
+      <div class="paper-container">
+        <div class="paper-section-head"><div class="paper-kicker">The complement</div><div><h2>MFS adds a biological question to the scorecard.</h2><p>Traditional reconstruction metrics remain useful: they tell us whether the predicted profile resembles the measured response. MFS adds evidence that resemblance alone cannot provide.</p></div></div>
+        <div class="paper-argument-visual">
+          <div class="paper-chart-column">
+            <div class="paper-chart-stage">
+              <img src="assets/pcs-mse-main.svg" alt="Scatter plot of MSE-derived expression similarity against Mechanism Fidelity Score, with a highlighted high-similarity and low-PCS region." loading="eager">
+              <div class="paper-focus-source" aria-hidden="true"></div>
+            </div>
+          </div>
+          <svg class="paper-zoom-connector paper-zoom-connector-wide" viewBox="0 0 76 420" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="zoomBridgeWide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f2b8af" stop-opacity=".16"/><stop offset="1" stop-color="#b65349" stop-opacity=".24"/></linearGradient></defs>
+            <path d="M0 304 L76 0 L76 420 L0 316 Z" fill="url(#zoomBridgeWide)"/>
+            <path d="M0 304 L76 0 M0 316 L76 420" fill="none" stroke="#b65349" stroke-width="1.5" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <svg class="paper-zoom-connector paper-zoom-connector-stacked" viewBox="0 0 420 66" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="zoomBridgeStacked" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2b8af" stop-opacity=".16"/><stop offset="1" stop-color="#b65349" stop-opacity=".24"/></linearGradient></defs>
+            <path d="M327 0 L0 66 L420 66 L408 0 Z" fill="url(#zoomBridgeStacked)"/>
+            <path d="M327 0 L0 66 M408 0 L420 66" fill="none" stroke="#b65349" stroke-width="1.5" stroke-dasharray="6 6" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <aside class="paper-zoom-panel" id="pcs-mse-zoom" aria-label="Local focus view">
+            <div class="paper-zoom-head"><div><span class="paper-kicker">Local focus</span><h3>High similarity, low PCS</h3></div></div>
+            <img src="assets/pcs-mse-zoom.svg?v=20260811-2" alt="Local view of the highlighted high-similarity and low-PCS cases." loading="lazy">
+            <p>These cases look close on expression reconstruction while their mechanism fidelity is at the floor of the measured scale.</p>
+            <div class="paper-zoom-metrics" aria-label="Discordance summary">
+              <div><strong>399 / 683</strong><span>high-expression cases with low PCS</span></div>
+              <div><strong>58.4%</strong><span>discordance rate</span></div>
+            </div>
+          </aside>
+        </div>
+        <div class="paper-chart-note"><span class="paper-dot" aria-hidden="true"></span><span>Coral points meet both thresholds.</span></div>
+        <div class="paper-complement-grid">
+          <article class="paper-complement-row"><span class="paper-complement-index">01</span><div><h3>Reconstruction</h3><p>Does the whole predicted expression profile look like the observed response?</p></div><strong class="paper-complement-tag paper-complement-tag-blue">ESS / MSE</strong></article>
+          <article class="paper-complement-row paper-complement-row-accent"><span class="paper-complement-index">02</span><div><h3>Mechanism fidelity</h3><p>Do the annotated key genes and pathways change in the right direction and magnitude?</p></div><strong class="paper-complement-tag paper-complement-tag-green">MFS / PCS</strong></article>
+          <article class="paper-complement-row"><span class="paper-complement-index">03</span><div><h3>Decision context</h3><p>Use both views when choosing a model for biological interpretation or downstream retrieval.</p></div><strong class="paper-complement-tag paper-complement-tag-neutral">Together</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt" id="models">
+      <div class="paper-container">
+        <div class="paper-section-head"><div class="paper-kicker">The unresolved weakness</div><div><h2>Current models optimize what is easiest to measure.</h2><p>Across the benchmark, expression-level accuracy can coexist with weak case-specific mechanism recovery. That gap is the benchmark's central diagnostic signal.</p></div></div>
+        <div class="paper-model-evidence">
+          <div class="paper-model-callout"><span class="paper-model-number">44.6&ndash;61.5%</span><span>overall shortcut or failure burden across evaluated settings</span></div>
+          <div class="paper-model-callout"><span class="paper-model-number">84.3&ndash;99.9%</span><span>signature-specificity failures when matched background is considered</span></div>
+          <div class="paper-model-callout"><span class="paper-model-number">48.7%</span><span>median strength-controlled discrimination accuracy</span></div>
+        </div>
+        <div class="paper-model-note"><strong>What this does not mean:</strong> MFS is not a replacement for expression reconstruction, and a low score does not identify one universal failure mechanism. It is a complementary lens that makes hidden failure visible.</div>
+      </div>
+    </section>
+
+    <section class="paper-section" id="scope">
+      <div class="paper-container">
+        <div class="paper-section-head"><div class="paper-kicker">Why trust the benchmark</div><div><h2>Evidence curated for case-specific evaluation.</h2><p>Literature-derived mechanism annotations connect measured perturbations to directional gene and pathway evidence before any model is scored.</p></div></div>
+        <div class="paper-flow" aria-label="Benchmark curation flow"><span>literature</span><i aria-hidden="true">&rarr;</i><span>curated mechanisms</span><i aria-hidden="true">&rarr;</i><span>perturbation matrix</span><i aria-hidden="true">&rarr;</i><span>model evaluation</span></div>
+        <div class="paper-stats" aria-label="Benchmark scope statistics">
+          <div class="paper-stat"><strong>&gt;50k</strong><span>PubMed records screened</span></div><div class="paper-stat"><strong>93</strong><span>studies</span></div><div class="paper-stat"><strong>181</strong><span>datasets</span></div><div class="paper-stat"><strong>2.5M</strong><span>cells</span></div><div class="paper-stat"><strong>101</strong><span>drugs</span></div><div class="paper-stat"><strong>717</strong><span>annotated key genes</span></div><div class="paper-stat"><strong>137</strong><span>cellular contexts</span></div><div class="paper-stat"><strong>423</strong><span>directionally annotated cases</span></div><div class="paper-stat"><strong>4,500</strong><span>model evaluations</span></div><div class="paper-stat"><strong>12 + 3</strong><span>published models plus baselines</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt" id="resources">
+      <div class="paper-container">
+        <div class="paper-section-head"><div class="paper-kicker">Open resources</div><div><h2>Follow the evidence back to the source.</h2><p>The benchmark, code and manuscript will be released as versioned, reproducible artifacts.</p></div></div>
+        <div class="paper-resources"><article class="paper-resource"><h3>Manuscript</h3><p>Paper and supplementary material.</p><span class="paper-pending">Coming with release</span></article><article class="paper-resource"><h3>Benchmark data</h3><p>Curated cases, annotations and split definitions.</p><span class="paper-pending">Coming with release</span></article><article class="paper-resource"><h3>Evaluation code</h3><p>Metric implementations and reproducible runs.</p><span class="paper-pending">Coming with release</span></article></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="paper-footer"><div class="paper-container paper-footer-inner"><span>scDrugPerturb-Bench / Simucella research program</span><a href="index.html">Back to Simucella home &rarr;</a></div></footer>
+  <script src="paper.js"></script>
+</body>
+</html>

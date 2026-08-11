@@ -1,0 +1,28 @@
+{
+  "split": "iid-sample",
+  "expression_metric": "MSE",
+  "complete_rows": 3414,
+  "high_expression_rows": 683,
+  "discordant_rows": 399,
+  "discordance_rate": 0.5841874084919473,
+  "discordance_rate_all_complete_rows": 0.11687170474516696,
+  "expression_threshold": 0.7874962578465209,
+  "pcs_threshold": 0.0,
+  "model_families": [
+    "CPA",
+    "LR",
+    "MAP",
+    "MLP",
+    "PRnet",
+    "PerturbDiff",
+    "PrePR-CT",
+    "STATE-ST",
+    "Squidiff",
+    "XPert",
+    "baseMean",
+    "biolord",
+    "chemCPA",
+    "cycleCDR"
+  ],
+  "source_note": "Zoom display separates overlapping PCS=0 cases for visual inspection."
+}

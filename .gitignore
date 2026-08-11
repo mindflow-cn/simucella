@@ -1,3 +1,16 @@
+# OS and editor files
 .DS_Store
-*.log
+*.swp
+*~
+
+# Dependencies and runtime output
 node_modules/
+*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local figure-rendering scratch files
+tmp/

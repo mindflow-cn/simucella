@@ -76,6 +76,7 @@
       gap: 20px;
     }
     #drughiter-home-sketch .dh-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    #drughiter-home-sketch .dh-logo { display: block; width: auto; height: 32px; }
     #drughiter-home-sketch .dh-mark {
       width: 31px;
       height: 31px;
@@ -182,8 +183,8 @@
     }
     #drughiter-home-sketch .dh-section-head p { margin: 0; color: var(--dh-muted); line-height: 1.7; }
 
-    #drughiter-home-sketch .dh-program-list { border-top: 1px solid var(--dh-line); }
-    #drughiter-home-sketch .dh-program-item {
+    #drughiter-home-sketch .dh-roadmap-list { border-top: 1px solid var(--dh-line); }
+    #drughiter-home-sketch .dh-roadmap-item {
       display: grid;
       grid-template-columns: 62px minmax(180px, .8fr) minmax(220px, 1.5fr) 112px;
       gap: 22px;
@@ -191,9 +192,9 @@
       padding: 23px 0;
       border-bottom: 1px solid var(--dh-line);
     }
-    #drughiter-home-sketch .dh-program-num { color: var(--dh-green); font-size: 12px; letter-spacing: .1em; }
-    #drughiter-home-sketch .dh-program-item h3 { margin: 0; font-size: 17px; font-weight: 500; }
-    #drughiter-home-sketch .dh-program-item p { margin: 0; color: var(--dh-muted); font-size: 14px; line-height: 1.6; }
+    #drughiter-home-sketch .dh-roadmap-num { color: var(--dh-green); font-size: 12px; letter-spacing: .1em; }
+    #drughiter-home-sketch .dh-roadmap-item h3 { margin: 0; font-size: 17px; font-weight: 500; }
+    #drughiter-home-sketch .dh-roadmap-item p { margin: 0; color: var(--dh-muted); font-size: 14px; line-height: 1.6; }
     #drughiter-home-sketch .dh-status {
       justify-self: end;
       border-radius: 999px;
@@ -205,7 +206,6 @@
     #drughiter-home-sketch .dh-status-active { color: var(--dh-green); background: var(--dh-green-soft); }
     #drughiter-home-sketch .dh-status-prep { color: var(--dh-blue); background: var(--dh-blue-soft); }
     #drughiter-home-sketch .dh-status-planned { color: var(--dh-amber); background: var(--dh-amber-soft); }
-
     #drughiter-home-sketch .dh-featured {
       display: grid;
       grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr);
@@ -267,61 +267,18 @@
     }
     #drughiter-home-sketch .dh-featured-media figcaption { margin-top: 10px; color: var(--dh-muted); font-size: 11px; }
 
-    #drughiter-home-sketch .dh-publication {
+    #drughiter-home-sketch .dh-project-grid {
       display: grid;
-      grid-template-columns: 76px 1fr auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
-      align-items: start;
-      padding: 25px 0;
-      border-top: 1px solid var(--dh-line);
-      border-bottom: 1px solid var(--dh-line);
     }
-    #drughiter-home-sketch .dh-pub-year { color: var(--dh-green); font-size: 14px; font-weight: 500; }
-    #drughiter-home-sketch .dh-publication h3 { margin: 0 0 8px; font-size: 19px; font-weight: 500; line-height: 1.35; }
-    #drughiter-home-sketch .dh-publication p { margin: 0; color: var(--dh-muted); font-size: 13px; line-height: 1.6; }
-    #drughiter-home-sketch .dh-pub-actions { display: flex; align-items: center; gap: 10px; color: var(--dh-blue); font-size: 13px; white-space: nowrap; }
-
-    #drughiter-home-sketch .dh-roadmap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
-    #drughiter-home-sketch .dh-roadmap-line { border-left: 1px solid var(--dh-line); padding-left: 24px; }
-    #drughiter-home-sketch .dh-roadmap-entry { position: relative; padding: 0 0 25px; }
-    #drughiter-home-sketch .dh-roadmap-entry:last-child { padding-bottom: 0; }
-    #drughiter-home-sketch .dh-roadmap-entry::before {
-      content: "";
-      position: absolute;
-      width: 9px;
-      height: 9px;
-      left: -29px;
-      top: 5px;
-      border-radius: 50%;
-      background: var(--dh-page);
-      border: 2px solid var(--dh-green);
-    }
-    #drughiter-home-sketch .dh-roadmap-entry span { color: var(--dh-green); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
-    #drughiter-home-sketch .dh-roadmap-entry h3 { margin: 5px 0 6px; font-size: 16px; font-weight: 500; }
-    #drughiter-home-sketch .dh-roadmap-entry p { margin: 0; color: var(--dh-muted); font-size: 13px; line-height: 1.55; }
-    #drughiter-home-sketch .dh-maintenance {
-      border-top: 1px solid var(--dh-line);
-    }
-    #drughiter-home-sketch .dh-maintenance-row {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 14px;
-      padding: 17px 0;
-      border-bottom: 1px solid var(--dh-line);
-    }
-    #drughiter-home-sketch .dh-maintenance-icon {
-      width: 24px;
-      height: 24px;
-      display: grid;
-      place-items: center;
-      color: var(--dh-green);
+    #drughiter-home-sketch .dh-project-placeholder {
+      min-height: 220px;
       border: 1px solid var(--dh-line);
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 600;
+      border-radius: 8px;
+      background: var(--dh-surface);
+      box-shadow: 0 12px 28px var(--dh-shadow);
     }
-    #drughiter-home-sketch .dh-maintenance-row strong { display: block; font-size: 14px; font-weight: 500; }
-    #drughiter-home-sketch .dh-maintenance-row > div span { color: var(--dh-muted); font-size: 12px; }
 
     #drughiter-home-sketch .dh-partners { padding: 38px 0; border-bottom: 1px solid var(--dh-line); }
     #drughiter-home-sketch .dh-partners-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; }
@@ -348,8 +305,8 @@
       #drughiter-home-sketch .dh-hero { padding-top: 52px; }
       #drughiter-home-sketch .dh-hero-visual { width: min(100%, 500px); margin-top: 14px; }
       #drughiter-home-sketch .dh-featured-media { border-left: 0; border-top: 1px solid var(--dh-line); }
-      #drughiter-home-sketch .dh-program-item { grid-template-columns: 42px minmax(150px, .7fr) 1.3fr; }
-      #drughiter-home-sketch .dh-program-item .dh-status { grid-column: 2 / 4; justify-self: start; }
+      #drughiter-home-sketch .dh-roadmap-item { grid-template-columns: 42px minmax(150px, .7fr) 1.3fr; }
+      #drughiter-home-sketch .dh-roadmap-item .dh-status { grid-column: 2 / 4; justify-self: start; }
     }
 
     @media (max-width: 560px) {
@@ -360,15 +317,14 @@
       #drughiter-home-sketch .dh-hero-visual { width: 100%; }
       #drughiter-home-sketch .dh-section { padding: 52px 0; }
       #drughiter-home-sketch .dh-section-head { grid-template-columns: 1fr; gap: 12px; }
-      #drughiter-home-sketch .dh-program-item { grid-template-columns: 36px 1fr; gap: 10px; }
-      #drughiter-home-sketch .dh-program-item p,
-      #drughiter-home-sketch .dh-program-item .dh-status { grid-column: 2; }
+      #drughiter-home-sketch .dh-roadmap-item { grid-template-columns: 36px 1fr; gap: 10px; }
+      #drughiter-home-sketch .dh-roadmap-item p,
+      #drughiter-home-sketch .dh-roadmap-item .dh-status { grid-column: 2; }
       #drughiter-home-sketch .dh-project-facts { grid-template-columns: 1fr 1fr; }
       #drughiter-home-sketch .dh-project-fact:nth-child(odd) { border-left: 0; padding-left: 0; }
       #drughiter-home-sketch .dh-project-fact:nth-child(n+3) { border-top: 1px solid var(--dh-line); }
       #drughiter-home-sketch .dh-featured-copy { padding: 24px; }
-      #drughiter-home-sketch .dh-publication { grid-template-columns: 1fr; gap: 10px; }
-      #drughiter-home-sketch .dh-roadmap-grid { grid-template-columns: 1fr; }
+      #drughiter-home-sketch .dh-project-grid { grid-template-columns: 1fr; }
       #drughiter-home-sketch .dh-partners-inner,
       #drughiter-home-sketch .dh-cta-inner,
       #drughiter-home-sketch .dh-footer-inner { align-items: flex-start; flex-direction: column; }
@@ -388,14 +344,12 @@
   <nav class="dh-nav" aria-label="Primary navigation">
     <div class="dh-shell dh-nav-inner">
       <a class="dh-brand" href="#dh-home">
-        <span class="dh-mark" aria-hidden="true">D</span>
-        <span><strong>Simucella</strong></span>
+        <img class="dh-logo" src="assets/simucella-logo.svg" alt="Simucella">
       </a>
       <div class="dh-nav-links">
-        <a href="#dh-program">Program</a>
+        <a href="#dh-roadmap">Roadmap</a>
+        <a href="#dh-publications">Publication</a>
         <a href="#dh-projects">Projects</a>
-        <a href="#dh-publications">Publications</a>
-        <a href="#dh-roadmap">Releases</a>
         <a class="dh-nav-github" href="#dh-open-source">GitHub <span aria-hidden="true">&nearr;</span></a>
       </div>
     </div>
@@ -410,9 +364,9 @@
             <h1>Build the <span>Virtual Cell</span></h1>
             <p>Simucella develops open perturbation datasets, predictive models and multi-omics systems for understanding cellular response and advancing AI-driven drug discovery.</p>
             <div class="dh-actions">
-              <a class="dh-action dh-action-primary" href="#dh-program">Explore our program <span aria-hidden="true">&rarr;</span></a>
-              <a class="dh-action" href="#dh-projects">scDrugPerturb-Bench</a>
-              <a class="dh-action" href="#dh-publications">Publication</a>
+              <a class="dh-action dh-action-primary" href="#dh-roadmap">Explore our roadmap <span aria-hidden="true">&rarr;</span></a>
+              <a class="dh-action" href="#dh-publications">scDrugPerturb-Bench</a>
+              <a class="dh-action" href="#dh-projects">Projects</a>
             </div>
           </div>
 
@@ -424,43 +378,61 @@
       </div>
     </section>
 
-    <section class="dh-section" id="dh-program">
+    <section class="dh-section" id="dh-roadmap">
       <div class="dh-shell">
         <div class="dh-section-head">
-          <div class="dh-section-kicker">Research program</div>
+          <div class="dh-section-kicker">Roadmap</div>
           <div>
-            <h2>One program, five connected capabilities.</h2>
-            <p>Our long-term goal is a computable cell that can predict how biological systems respond to interventions, connect molecular mechanisms to phenotypes and support therapeutic discovery.</p>
+            <h2>Building the foundations for virtual cells.</h2>
+            <p>We are building from open, reproducible perturbation resources toward models that predict intervention responses, connect molecular mechanisms to phenotypes and support therapeutic discovery.</p>
           </div>
         </div>
 
-        <div class="dh-program-list">
-          <article class="dh-program-item">
-            <div class="dh-program-num">01</div>
-            <h3>Perturbation datasets</h3>
-            <p>Versioned drug- and gene-perturbation datasets with biological context, provenance, evidence and reproducible splits.</p>
-            <span class="dh-status dh-status-active">Active</span>
+        <div class="dh-roadmap-list">
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">01</div>
+            <h3>Benchmark preprint</h3>
+            <p>The scDrugPerturb-Bench manuscript defines mechanism-aware evaluation tasks and reporting standards for single-cell drug response prediction.</p>
+            <span class="dh-status dh-status-active">Completed</span>
           </article>
-          <article class="dh-program-item">
-            <div class="dh-program-num">02</div>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">02</div>
+            <h3>Drug perturbation dataset release</h3>
+            <p>Curated perturbation data, literature-grounded biological evidence and reproducible evaluation splits are released as a versioned resource.</p>
+            <span class="dh-status dh-status-active">Completed</span>
+          </article>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">03</div>
+            <h3>Open-source benchmark project</h3>
+            <p>The evaluation toolkit, metrics, model adapters and reference configurations are available for public use and contribution.</p>
+            <span class="dh-status dh-status-active">Completed</span>
+          </article>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">04</div>
+            <h3>Gene perturbation datasets</h3>
+            <p>Versioned genetic-intervention datasets with biological context, provenance, evidence and reproducible splits.</p>
+            <span class="dh-status dh-status-prep">Next</span>
+          </article>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">05</div>
             <h3>Drug perturbation models</h3>
             <p>Mechanism-aware models for predicting cellular response across compounds, doses, cell states and experimental systems.</p>
-            <span class="dh-status dh-status-prep">In preparation</span>
+            <span class="dh-status dh-status-planned">Planned</span>
           </article>
-          <article class="dh-program-item">
-            <div class="dh-program-num">03</div>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">06</div>
             <h3>Gene perturbation models</h3>
             <p>Models of causal gene programs and genetic interventions that complement compound-level perturbation learning.</p>
             <span class="dh-status dh-status-planned">Planned</span>
           </article>
-          <article class="dh-program-item">
-            <div class="dh-program-num">04</div>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">07</div>
             <h3>Virtual cells</h3>
             <p>Foundation and multi-omics models that represent cell state, forecast transitions and simulate intervention responses.</p>
             <span class="dh-status dh-status-planned">Long-term</span>
           </article>
-          <article class="dh-program-item">
-            <div class="dh-program-num">05</div>
+          <article class="dh-roadmap-item">
+            <div class="dh-roadmap-num">08</div>
             <h3>AI-driven drug discovery</h3>
             <p>Evaluation tasks and models for compound retrieval, target discovery, response prediction and therapeutic development.</p>
             <span class="dh-status dh-status-planned">Long-term</span>
@@ -469,17 +441,17 @@
       </div>
     </section>
 
-    <section class="dh-section" id="dh-projects">
+    <section class="dh-section" id="dh-publications">
       <div class="dh-shell">
         <div class="dh-section-head">
-          <div class="dh-section-kicker">Featured project</div>
+          <div class="dh-section-kicker">Publication</div>
           <div><h2>Start with mechanisms, not reconstruction alone.</h2></div>
         </div>
 
         <article class="dh-featured">
           <div class="dh-featured-copy">
             <div class="dh-featured-top">
-              <span class="dh-featured-type">Benchmark</span>
+              <span class="dh-featured-type">Preprint</span>
               <span class="dh-status dh-status-active">Active development</span>
             </div>
             <h3>scDrugPerturb-Bench</h3>
@@ -496,10 +468,10 @@
               <div class="dh-evidence-meta"><span>Benchmark 32094658_01</span><span>GSE137659</span><span>1,728 cells (686 control + 1,042 treated)</span></div>
             </div>
             <div class="dh-actions">
-              <a class="dh-action dh-action-primary" href="#dh-projects">Project page <span aria-hidden="true">&rarr;</span></a>
-              <a class="dh-action" href="#dh-publications">Manuscript</a>
-              <span class="dh-action" aria-label="Code release is in preparation">Code: soon</span>
-              <span class="dh-action" aria-label="Data release is in preparation">Data: soon</span>
+              <a class="dh-action dh-action-primary" href="paper.html">Publication page <span aria-hidden="true">&rarr;</span></a>
+              <a class="dh-action" href="#dh-projects">Open-source projects</a>
+              <span class="dh-action" aria-label="Code has been released">Code: released</span>
+              <span class="dh-action" aria-label="Data have been released">Data: released</span>
             </div>
           </div>
           <figure class="dh-featured-media">
@@ -510,44 +482,15 @@
       </div>
     </section>
 
-    <section class="dh-section" id="dh-publications">
+    <section class="dh-section" id="dh-projects">
       <div class="dh-shell">
         <div class="dh-section-head">
-          <div class="dh-section-kicker">Publications</div>
-          <div><h2>From biological evidence to predictive models.</h2></div>
+          <div class="dh-section-kicker">Projects</div>
+          <div><h2>Open tools for the research community.</h2></div>
         </div>
-        <article class="dh-publication">
-          <div class="dh-pub-year">2026</div>
-          <div>
-            <h3>scDrugPerturb-Bench</h3>
-            <p>Do single-cell drug perturbation models recover mechanisms beyond expression reconstruction?</p>
-          </div>
-          <div class="dh-pub-actions"><a href="#dh-projects">Project</a><span>&middot;</span><a href="#dh-publications">BibTeX soon</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="dh-section" id="dh-roadmap">
-      <div class="dh-shell">
-        <div class="dh-section-head">
-          <div class="dh-section-kicker">Releases &amp; maintenance</div>
-          <div>
-            <h2>Built for reproducible, long-term use.</h2>
-            <p>Simucella releases datasets, models and evaluation tools as versioned, citable artifacts with documented provenance and public change histories.</p>
-          </div>
-        </div>
-        <div class="dh-roadmap-grid">
-          <div class="dh-roadmap-line">
-            <article class="dh-roadmap-entry"><span>01 &middot; Specification</span><h3>Manuscript &amp; benchmark specification</h3><p>Task definitions, mechanism-aware evaluation and reporting standards.</p></article>
-            <article class="dh-roadmap-entry"><span>02 &middot; Data</span><h3>Dataset release</h3><p>Curated perturbation data, literature-derived biological evidence and reproducible splits.</p></article>
-            <article class="dh-roadmap-entry"><span>03 &middot; Toolkit</span><h3>Evaluation toolkit</h3><p>Metrics, model adapters, reference configurations and baseline results.</p></article>
-          </div>
-          <div class="dh-maintenance">
-            <div class="dh-maintenance-row"><span class="dh-maintenance-icon" aria-hidden="true">V</span><div><strong>Versioned &amp; citable releases</strong><span>Persistent versions keep datasets, metrics and model adapters independently citable.</span></div></div>
-            <div class="dh-maintenance-row"><span class="dh-maintenance-icon" aria-hidden="true">P</span><div><strong>Traceable data provenance</strong><span>Source studies, processing steps and biological evidence remain auditable.</span></div></div>
-            <div class="dh-maintenance-row"><span class="dh-maintenance-icon" aria-hidden="true">R</span><div><strong>Reproducible evaluation</strong><span>Machine-readable splits, metric definitions and reference configurations accompany each release.</span></div></div>
-            <div class="dh-maintenance-row"><span class="dh-maintenance-icon" aria-hidden="true">O</span><div><strong>Public corrections &amp; collaboration</strong><span>Changelogs, issues, dataset proposals and model integrations are tracked openly.</span></div></div>
-          </div>
+        <div class="dh-project-grid" aria-label="GitHub projects">
+          <article class="dh-project-placeholder" aria-label="GitHub project placeholder"></article>
+          <article class="dh-project-placeholder" aria-label="GitHub project placeholder"></article>
         </div>
       </div>
     </section>
@@ -564,7 +507,7 @@
         <div><h2>Open research, released with evidence.</h2><p>Follow Simucella as datasets, models and evaluation resources become available.</p></div>
         <div class="dh-actions">
           <a class="dh-action dh-action-primary" href="#dh-open-source">View on GitHub <span aria-hidden="true">&nearr;</span></a>
-          <a class="dh-action" href="#dh-roadmap">Release track</a>
+          <a class="dh-action" href="#dh-roadmap">Roadmap</a>
         </div>
       </div>
     </section>
@@ -573,7 +516,7 @@
   <footer class="dh-footer">
     <div class="dh-shell dh-footer-inner">
       <small>Simucella · HITSZ x MindFlow.AI · Under active development</small>
-      <div class="dh-footer-links"><a href="#dh-projects">Projects</a><a href="#dh-publications">Publications</a><a href="#dh-roadmap">Releases</a><a href="#dh-open-source">Contributing</a><a href="#dh-open-source">Contact</a></div>
+      <div class="dh-footer-links"><a href="#dh-roadmap">Roadmap</a><a href="#dh-publications">Publication</a><a href="#dh-projects">Projects</a><a href="#dh-open-source">Contributing</a><a href="#dh-open-source">Contact</a></div>
     </div>
   </footer>
 

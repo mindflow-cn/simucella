@@ -1,0 +1,13 @@
+model,ESS,MFS,ESS_rank,MFS_rank
+Model A,0.91,0.24,1,11
+Model B,0.89,0.31,2,7
+Model C,0.87,0.28,3,9
+Model D,0.85,0.4,4,3
+Model E,0.84,0.37,5,5
+Model F,0.82,0.26,6,10
+Model G,0.81,0.51,7,1
+Model H,0.8,0.34,8,6
+Model I,0.79,0.45,9,2
+Model J,0.77,0.3,10,8
+Model K,0.75,0.39,11,4
+Model L,0.73,0.22,12,12
