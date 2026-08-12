@@ -19,6 +19,7 @@
       <div class="paper-nav-links">
         <a href="#benchmark">At a glance</a>
         <a href="#complement">Why MFS</a>
+        <a href="#results">Results</a>
         <a class="paper-home" href="index.html">Simucella home</a>
       </div>
     </nav>
@@ -145,9 +146,39 @@
         <div class="paper-chart-note"><span class="paper-dot" aria-hidden="true"></span><span>Coral points meet both thresholds.</span></div>
       </div>
     </section>
+
+    <section class="paper-section paper-results-section" id="results">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Benchmark results</div>
+          <div><h2>Compare every model, under every test.</h2><p>Each bar reports the mean across three runs. Choose a data split and metric to compare Raw predictions with nine foundation-model embeddings.</p></div>
+        </div>
+        <div class="paper-results-shell">
+          <div class="paper-results-toolbar" aria-label="Benchmark chart controls">
+            <label class="paper-results-field" for="paper-results-split"><span>Data split</span><select id="paper-results-split"></select></label>
+            <label class="paper-results-field" for="paper-results-metric"><span>Metric</span><select id="paper-results-metric"></select></label>
+            <div class="paper-results-direction" id="paper-results-direction" aria-live="polite"></div>
+          </div>
+          <div class="paper-results-meta">
+            <p id="paper-results-status">Loading benchmark results&hellip;</p>
+            <span>Raw + 9 embeddings</span>
+          </div>
+          <div class="paper-results-ranking" aria-live="polite">
+            <span class="paper-results-ranking-label">Top 5 combinations</span>
+            <ol id="paper-results-top-five"></ol>
+          </div>
+          <div class="paper-results-scroll" tabindex="0" aria-label="Scrollable benchmark chart">
+            <div class="paper-results-chart"><canvas id="paper-results-canvas" role="img" aria-label="Benchmark results grouped bar chart"></canvas></div>
+          </div>
+          <p class="paper-results-note">baseMean and PrePR-CT are evaluated on Raw input only. Scroll horizontally to inspect all models on smaller screens.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="paper-footer"><div class="paper-container paper-footer-inner"><span>scDrugPerturb-Bench / Simucella research program</span><a href="index.html">Back to Simucella home &rarr;</a></div></footer>
-  <script src="paper.js"></script>
+  <script src="assets/vendor/chart.umd.js"></script>
+  <script src="assets/benchmark-results.js"></script>
+  <script src="paper.js?v=20260813-4"></script>
 </body>
 </html>
