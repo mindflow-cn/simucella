@@ -30,7 +30,7 @@ Content:
 - Paper title: *Do single-cell drug perturbation models recover mechanisms beyond expression reconstruction?*
 - One-sentence conclusion: `Expression reconstruction is not mechanism recovery.`
 - Author list and affiliations
-- Simucella / HITSZ / MindFlow.AI identity
+- Simucella / MindFlow.AI identity
 - Paper status, publication venue or preprint information
 - Primary actions: `Paper`, `Code`, `Benchmark`, `Citation`
 
