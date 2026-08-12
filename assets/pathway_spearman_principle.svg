@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name=" 图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.92 249.56">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #767676;
+        stroke-dasharray: 6 5;
+        stroke-width: 1.5px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #c92225;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 1.8px;
+      }
+
+      .cls-5 {
+        fill: #7aa1eb;
+      }
+
+      .cls-6, .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-7 {
+        font-family: ArialMT, Arial;
+        font-size: 14px;
+      }
+
+      .cls-3 {
+        stroke: #7aa1eb;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+      }
+
+      .cls-8 {
+        fill: #80c041;
+      }
+    </style>
+  </defs>
+  <line class="cls-2" x1="36.01" y1="218.01" x2="406.01" y2="218.01"/>
+  <line class="cls-3" x1="36.01" y1="218.01" x2="36.01" y2="16.01"/>
+  <g class="cls-6">
+    <text class="cls-7" transform="translate(121.41 245.01)"><tspan x="0" y="0">Ground-truth pathway NES rank</tspan></text>
+  </g>
+  <g class="cls-6">
+    <text class="cls-7" transform="translate(12.01 208.05) rotate(-90)"><tspan x="0" y="0">Prediction pathway NES rank</tspan></text>
+  </g>
+  <line class="cls-1" x1="36.01" y1="218.01" x2="406.01" y2="16.01"/>
+  <g>
+    <rect class="cls-8" x="55.01" y="203.01" width="12" height="12"/>
+    <rect class="cls-4" x="55.01" y="203.01" width="12" height="12"/>
+  </g>
+  <g class="cls-6">
+    <text class="cls-7" transform="translate(71.01 188.01)"><tspan x="0" y="0">P1</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-8" x="87.01" y="172.01" width="12" height="12"/>
+    <rect class="cls-4" x="87.01" y="172.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="122.01" y="194.01" width="12" height="12"/>
+    <rect class="cls-4" x="122.01" y="194.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="159.01" y="149.01" width="12" height="12"/>
+    <rect class="cls-4" x="159.01" y="149.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="197.01" y="125.01" width="12" height="12"/>
+    <rect class="cls-4" x="197.01" y="125.01" width="12" height="12"/>
+  </g>
+  <g class="cls-6">
+    <text class="cls-7" transform="translate(213.01 110.01)"><tspan x="0" y="0">P5</tspan></text>
+  </g>
+  <g>
+    <rect class="cls-8" x="235.01" y="140.01" width="12" height="12"/>
+    <rect class="cls-4" x="235.01" y="140.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="271.01" y="86.01" width="12" height="12"/>
+    <rect class="cls-4" x="271.01" y="86.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="309.01" y="58.01" width="12" height="12"/>
+    <rect class="cls-4" x="309.01" y="58.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-8" x="348.01" y="81.01" width="12" height="12"/>
+    <rect class="cls-4" x="348.01" y="81.01" width="12" height="12"/>
+  </g>
+  <g>
+    <rect class="cls-5" x="385.01" y="25.01" width="12" height="12"/>
+    <rect class="cls-4" x="385.01" y="25.01" width="12" height="12"/>
+    <rect class="cls-8" x="385.01" y="25.01" width="12" height="12"/>
+  </g>
+  <g class="cls-6">
+    <text class="cls-7" transform="translate(401.01 12.01)"><tspan x="0" y="0">P10</tspan></text>
+  </g>
+</svg>

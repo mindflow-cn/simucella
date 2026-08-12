@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name=" 图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560.5 204.86">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #272727;
+        font-family: Arial-BoldMT, Arial;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        isolation: isolate;
+      }
+
+      .cls-4 {
+        fill: #7aa1eb;
+      }
+
+      .cls-5 {
+        fill: #c92225;
+      }
+
+      .cls-6 {
+        stroke: #d8d8d8;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12 {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .cls-7 {
+        stroke: #da142f;
+      }
+
+      .cls-7, .cls-11 {
+        stroke-width: 2px;
+      }
+
+      .cls-8, .cls-9, .cls-11 {
+        stroke: #7aa1eb;
+      }
+
+      .cls-8, .cls-10 {
+        stroke-width: 4.2px;
+      }
+
+      .cls-3 {
+        font-family: ArialMT, Arial;
+        font-size: 14px;
+      }
+
+      .cls-9, .cls-12 {
+        stroke-dasharray: 4 4;
+        stroke-linejoin: round;
+        stroke-width: 1.4px;
+      }
+
+      .cls-13 {
+        fill: #da142f;
+      }
+
+      .cls-10, .cls-12 {
+        stroke: #c92225;
+      }
+    </style>
+  </defs>
+  <g class="cls-2">
+    <text class="cls-1" transform="translate(135.24 13.73)"><tspan x="0" y="0">Ground-truth</tspan></text>
+  </g>
+  <g class="cls-2">
+    <text class="cls-1" transform="translate(375.88 13.73)"><tspan x="0" y="0">Prediction</tspan></text>
+  </g>
+  <line class="cls-6" x1=".5" y1="110.73" x2="560" y2="110.73"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(0 42.73)"><tspan x="0" y="0">activation</tspan></text>
+  </g>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(0 159.73)"><tspan x="0" y="0">suppression</tspan></text>
+  </g>
+  <line class="cls-10" x1="95" y1="110.73" x2="95" y2="38.57"/>
+  <circle class="cls-5" cx="95" cy="38.57" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(85.66 127.73)"><tspan x="0" y="0">G1</tspan></text>
+  </g>
+  <line class="cls-8" x1="335" y1="110.73" x2="335" y2="45.61"/>
+  <circle class="cls-4" cx="335" cy="45.61" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(325.66 127.73)"><tspan x="0" y="0">G1</tspan></text>
+  </g>
+  <line class="cls-10" x1="131" y1="110.73" x2="131" y2="59.69"/>
+  <circle class="cls-5" cx="131" cy="59.69" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(121.66 127.73)"><tspan x="0" y="0">G2</tspan></text>
+  </g>
+  <line class="cls-8" x1="371" y1="110.73" x2="371" y2="73.77"/>
+  <circle class="cls-4" cx="371" cy="73.77" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(361.66 127.73)"><tspan x="0" y="0">G2</tspan></text>
+  </g>
+  <line class="cls-10" x1="167" y1="110.73" x2="167" y2="79.93"/>
+  <circle class="cls-5" cx="167" cy="79.93" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(157.66 127.73)"><tspan x="0" y="0">G3</tspan></text>
+  </g>
+  <line class="cls-8" x1="407" y1="110.73" x2="407" y2="66.73"/>
+  <circle class="cls-4" cx="407" cy="66.73" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(397.66 127.73)"><tspan x="0" y="0">G3</tspan></text>
+  </g>
+  <line class="cls-10" x1="203" y1="110.73" x2="203" y2="97.53"/>
+  <circle class="cls-5" cx="203.01" cy="97.54" r="4.8" transform="translate(46.27 259.28) rotate(-71.56)"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(193.66 127.73)"><tspan x="0" y="0">G4</tspan></text>
+  </g>
+  <line class="cls-8" x1="443" y1="110.73" x2="443" y2="106.33"/>
+  <circle class="cls-4" cx="443" cy="106.33" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(433.66 127.73)"><tspan x="0" y="0">G4</tspan></text>
+  </g>
+  <line class="cls-10" x1="239" y1="110.73" x2="239" y2="130.09"/>
+  <circle class="cls-5" cx="239" cy="130.09" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(229.66 103.73)"><tspan x="0" y="0">G5</tspan></text>
+  </g>
+  <line class="cls-8" x1="479" y1="110.73" x2="479" y2="121.29"/>
+  <circle class="cls-4" cx="479" cy="121.29" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(469.66 103.73)"><tspan x="0" y="0">G5</tspan></text>
+  </g>
+  <line class="cls-10" x1="275" y1="110.73" x2="275" y2="152.97"/>
+  <circle class="cls-5" cx="275" cy="152.97" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(265.66 103.73)"><tspan x="0" y="0">G6</tspan></text>
+  </g>
+  <line class="cls-8" x1="515" y1="110.73" x2="515" y2="159.13"/>
+  <circle class="cls-4" cx="515" cy="159.13" r="4.8"/>
+  <g class="cls-2">
+    <text class="cls-3" transform="translate(505.66 103.73)"><tspan x="0" y="0">G6</tspan></text>
+  </g>
+  <path class="cls-12" d="M95,40.73c72,28,132,53,180,112"/>
+  <path class="cls-9" d="M335,45.73c54,27,120,44,180,113"/>
+  <g class="cls-2">
+    <text class="cls-1" transform="translate(340.4 187.87)"><tspan x="0" y="0"> </tspan></text>
+    <text class="cls-1" transform="translate(305 198.83)"><tspan x="0" y="0">rank correlation</tspan></text>
+  </g>
+  <g>
+    <line class="cls-11" x1="485.79" y1="131.94" x2="414.48" y2="180.42"/>
+    <polygon class="cls-4" points="420.68 168.51 422.31 169.68 414.65 180.31 427.35 177.09 427.84 179.03 409.81 183.6 420.68 168.51"/>
+  </g>
+  <g>
+    <line class="cls-7" x1="256.45" y1="129.54" x2="322.01" y2="182.45"/>
+    <polygon class="cls-13" points="308.81 179.97 309.46 178.08 321.85 182.33 315.09 171.11 316.8 170.08 326.4 186 308.81 179.97"/>
+  </g>
+</svg>

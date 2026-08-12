@@ -8,7 +8,7 @@
   <meta property="og:description" content="Expression reconstruction is not mechanism recovery.">
   <meta property="og:image" content="assets/pcs-mse-main.png">
   <title>scDrugPerturb-Bench | Simucella</title>
-  <link rel="stylesheet" href="paper.css?v=20260811-2">
+  <link rel="stylesheet" href="paper.css?v=20260812-2">
 </head>
 <body>
   <a class="paper-skip" href="#paper-main">Skip to content</a>
@@ -39,8 +39,62 @@
 
     <section class="paper-section paper-section-alt" id="benchmark">
       <div class="paper-container">
-        <div class="paper-section-head paper-section-head-empty">
+        <div class="paper-section-head">
           <div class="paper-kicker">At a glance</div>
+          <div><h2>Low MSE. Every key-gene direction wrong.</h2><p>A representative prediction looks excellent by expression reconstruction, yet reverses the entire known response programme.</p></div>
+        </div>
+        <article class="paper-case-study">
+          <div class="paper-case-verdict">
+            <div><span class="paper-case-label">T0901317 / human iPSC-derived microglia</span><h3>The profile looks right. The mechanism is backwards.</h3></div>
+            <div class="paper-case-numbers" aria-label="Case metrics">
+              <div><strong>0.0891</strong><span>MSE / 30 nM</span></div>
+              <div><strong>0.0858</strong><span>MSE / 100 nM</span></div>
+              <div class="paper-case-failure"><strong>0 / 8</strong><span>correct key-gene directions</span></div>
+            </div>
+          </div>
+          <div class="paper-case-media paper-case-media-wide"><img src="assets/case.svg?v=20260812-4" alt="T0901317 case study showing low MSE despite reversed predictions for ABCA1, ABCG1, APOE and ACSL1 at two doses." loading="eager"></div>
+          <div class="paper-case-media-mobile" aria-hidden="true">
+            <svg viewBox="0 0 225 142.8707" role="img"><image href="assets/case.svg?v=20260812-4" width="504.8356" height="142.8707"/></svg>
+            <svg viewBox="220 0 284.8356 79" role="img"><image href="assets/case.svg?v=20260812-4" width="504.8356" height="142.8707"/></svg>
+            <svg viewBox="220 72 284.8356 70.8707" role="img"><image href="assets/case.svg?v=20260812-4" width="504.8356" height="142.8707"/></svg>
+          </div>
+          <p class="paper-case-conclusion"><strong>ABCA1, ABCG1, APOE and ACSL1</strong> should all increase. The model predicts the opposite direction for every gene at both doses.</p>
+        </article>
+        <div class="paper-metric-intro">
+          <span class="paper-kicker">What expression similarity misses</span>
+          <div><h2>Six views of mechanism fidelity.</h2><p>MFS asks which parts of the biological mechanism a prediction actually recovers.</p></div>
+        </div>
+        <div class="paper-metric-grid" aria-label="Mechanism Fidelity Score components">
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Gene level</span><strong>PCS</strong></div>
+            <div class="paper-metric-figure"><img src="assets/pcs_principle.svg" alt="Principle diagram for Pattern Consistency Score." loading="eager"></div>
+            <div class="paper-metric-copy"><h3>Pattern Consistency</h3><p>Do key genes change in the annotated direction?</p></div>
+          </article>
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Gene level</span><strong>ESR</strong></div>
+            <div class="paper-metric-figure"><img src="assets/esr_principle.svg" alt="Principle diagram for Effect Size Recovery." loading="eager"></div>
+            <div class="paper-metric-copy"><h3>Effect Size Recovery</h3><p>Does the predicted magnitude match the measured effect?</p></div>
+          </article>
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Gene set</span><strong>GCS</strong></div>
+            <div class="paper-metric-figure"><img src="assets/gcs_principle.svg" alt="Principle diagram for Gene-set Coherence Score." loading="eager"></div>
+            <div class="paper-metric-copy"><h3>Gene-set Coherence</h3><p>Are mechanism genes recovered as a coordinated response?</p></div>
+          </article>
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Gene set</span><strong>MSS</strong></div>
+            <div class="paper-metric-figure"><img src="assets/mss_principle.svg" alt="Principle diagram for Mechanism Specificity Score." loading="lazy"></div>
+            <div class="paper-metric-copy"><h3>Mechanism Specificity</h3><p>Is the signal concentrated on mechanism-relevant genes?</p></div>
+          </article>
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Pathway level</span><strong>P&rho;</strong></div>
+            <div class="paper-metric-figure"><img src="assets/pathway_spearman_principle.svg" alt="Principle diagram for Pathway Spearman correlation." loading="lazy"></div>
+            <div class="paper-metric-copy"><h3>Pathway Spearman</h3><p>Are predicted and observed pathway profiles concordant?</p></div>
+          </article>
+          <article class="paper-metric-card">
+            <div class="paper-metric-head"><span>Pathway level</span><strong>PSA</strong></div>
+            <div class="paper-metric-figure"><img src="assets/pathway_sign_accuracy_principle.svg" alt="Principle diagram for Pathway Sign Accuracy." loading="lazy"></div>
+            <div class="paper-metric-copy"><h3>Pathway Sign Accuracy</h3><p>Are activated and suppressed pathways assigned correctly?</p></div>
+          </article>
         </div>
       </div>
     </section>
