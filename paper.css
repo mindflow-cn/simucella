@@ -66,7 +66,7 @@ button { font:inherit; }
 .paper-metric-head { min-height:43px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:0 15px; border-bottom:1px solid var(--line); }
 .paper-metric-head span { color:var(--muted); font-size:10px; font-weight:700; text-transform:uppercase; }
 .paper-metric-head strong { color:var(--green); font-size:14px; line-height:1; }
-.paper-metric-figure { height:190px; display:grid; place-items:center; overflow:hidden; padding:15px 18px; background:#fbfcfb; }
+.paper-metric-figure { height:224px; display:grid; place-items:center; overflow:hidden; padding:10px 14px; background:#fbfcfb; }
 .paper-metric-figure img { display:block; width:100%; height:100%; object-fit:contain; }
 .paper-metric-copy { min-height:105px; padding:15px 16px 17px; border-top:1px solid var(--line); }
 .paper-metric-copy h3 { margin:0; font-size:17px; line-height:1.25; font-weight:600; }
@@ -75,7 +75,7 @@ button { font:inherit; }
 .paper-correlation-copy h3 { max-width:410px; margin:10px 0 14px; font-size:30px; line-height:1.16; font-weight:550; }
 .paper-correlation-copy p { max-width:430px; margin:0; color:var(--muted); font-size:16px; line-height:1.6; }
 .paper-correlation-copy strong { display:block; max-width:430px; margin-top:20px; padding-left:14px; border-left:3px solid var(--green); color:var(--green); font-size:16px; line-height:1.45; }
-.paper-correlation-figure { width:75%; min-width:500px; justify-self:center; margin:0; padding:18px 20px 12px; border:1px solid var(--line); background:#fff; box-shadow:var(--shadow); }
+.paper-correlation-figure { width:68%; min-width:500px; justify-self:center; margin:0; padding:16px 18px 11px; border:1px solid var(--line); background:#fff; box-shadow:var(--shadow); }
 .paper-correlation-figure img { display:block; width:100%; max-height:620px; object-fit:contain; }
 .paper-correlation-figure figcaption { margin-top:10px; color:var(--muted); font-size:11px; line-height:1.4; }
 .paper-lead { max-width:760px; color:var(--muted); font-size:18px; }
@@ -211,7 +211,7 @@ button { font:inherit; }
   .paper-case-numbers { width:100%; }
   .paper-metric-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .paper-correlation-evidence { grid-template-columns:minmax(220px,.55fr) minmax(0,1.45fr); gap:28px; }
-  .paper-correlation-figure { width:82%; min-width:440px; }
+  .paper-correlation-figure { width:76%; min-width:440px; }
   .paper-split,.paper-split-reverse { grid-template-columns:1fr; }
   .paper-argument-visual { grid-template-columns:1fr; }
   .paper-chart-column { display:block; }
@@ -254,7 +254,7 @@ button { font:inherit; }
   .paper-metric-intro { grid-template-columns:1fr; gap:10px; margin:50px 0 22px; }
   .paper-metric-intro h2 { font-size:27px; }
   .paper-metric-grid { grid-template-columns:1fr; }
-  .paper-metric-figure { height:210px; }
+  .paper-metric-figure { height:226px; }
   .paper-metric-copy { min-height:0; }
   .paper-correlation-evidence { grid-template-columns:1fr; gap:24px; margin-bottom:50px; }
   .paper-correlation-copy h3 { font-size:27px; }

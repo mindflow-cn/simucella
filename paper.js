@@ -25,8 +25,8 @@
   if (!chartCanvas || !splitSelect || !metricSelect || !directionBadge || !status || !topFiveList) return;
 
   const colors = [
-    '#172a22', '#14795b', '#4e9b76', '#82b89a', '#2459b8',
-    '#6288cf', '#9b75b5', '#c486a5', '#d88a45', '#ddba55'
+    '#46504c', '#6f8f83', '#94ada3', '#bdcbc4', '#667c9e',
+    '#96a7c4', '#90819d', '#b39aa7', '#b18d72', '#c5b482'
   ];
 
   const formatValue = (value) => {
@@ -98,7 +98,12 @@
     afterDatasetsDraw(chart) {
       const context = chart.ctx;
       context.save();
-      (chart.$topFive || []).forEach((item) => {
+      const medalColors = [
+        { fill: '#d4a72c', stroke: '#9a6b0b' },
+        { fill: '#aeb8c1', stroke: '#6f7c87' },
+        { fill: '#b77b55', stroke: '#7e4d34' }
+      ];
+      (chart.$topFive || []).slice(0, 3).forEach((item, rank) => {
         const bar = chart.getDatasetMeta(item.datasetIndex).data[item.modelIndex];
         if (!bar) return;
         const centerY = Math.max(chart.chartArea.top + 10, bar.y - 9);
@@ -117,10 +122,10 @@
         context.fill();
         context.beginPath();
         context.arc(bar.x, centerY + 2, 4.5, 0, Math.PI * 2);
-        context.fillStyle = '#e1ad32';
+        context.fillStyle = medalColors[rank].fill;
         context.fill();
         context.lineWidth = 1;
-        context.strokeStyle = '#9a6b0b';
+        context.strokeStyle = medalColors[rank].stroke;
         context.stroke();
       });
       context.restore();
@@ -177,7 +182,7 @@
               color: (context) => context.index < 3 ? '#a6463d' : '#24352e',
               callback: function(value, index) {
                 const label = this.getLabelForValue(value);
-                return index < 3 ? [label, 'BASELINE'] : label;
+                return index < 3 ? [label, '(baseline)'] : label;
               },
               maxRotation: 0,
               minRotation: 0,
