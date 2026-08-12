@@ -10,7 +10,7 @@ button { font:inherit; }
 .paper-header { position:sticky; top:0; z-index:20; background:rgba(247,249,248,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
 .paper-nav { width:min(100% - 48px,1180px); min-height:66px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .paper-brand { display:inline-flex; align-items:center; gap:10px; text-decoration:none; white-space:nowrap; }
-.paper-logo { display:block; width:auto; height:32px; }
+.paper-logo { display:block; width:auto; height:42px; }
 .paper-mark { width:31px; height:31px; display:grid; place-items:center; background:var(--green); color:var(--bg); border-radius:6px; font-weight:700; }
 .paper-brand strong { font-size:17px; font-weight:500; }
 .paper-brand small { display:block; color:var(--muted); font-size:11px; }
@@ -230,9 +230,9 @@ button { font:inherit; }
 }
 @media (max-width:720px) {
   .paper-nav,.paper-hero-inner,.paper-container { width:min(100% - 32px,1180px); }
-  .paper-nav { min-height:58px; }
+  .paper-nav { min-height:70px; }
   .paper-menu { display:block; }
-  .paper-nav-links { position:absolute; top:58px; left:16px; right:16px; display:none; flex-direction:column; align-items:stretch; gap:0; padding:8px; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); }
+  .paper-nav-links { position:absolute; top:70px; left:16px; right:16px; display:none; flex-direction:column; align-items:stretch; gap:0; padding:8px; border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow); }
   .paper-nav-links.is-open { display:flex; }
   .paper-nav-links a { padding:11px 10px; }
   .paper-nav-links .paper-home { text-align:center; }
