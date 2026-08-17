@@ -8,7 +8,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_DIR = ROOT / "assets" / "csv" / "xlsx"
+SOURCE_DIR = ROOT / "assets" / "exp_data"
 OUTPUT_PATH = ROOT / "assets" / "benchmark-results.json"
 SCRIPT_OUTPUT_PATH = ROOT / "assets" / "benchmark-results.js"
 
@@ -80,22 +80,12 @@ def normalize_columns(frame):
     return frame
 
 
-def mean_by_model(frame, source_column, split_key, representation_key):
+def mean_by_model(frame, source_column):
     values = {}
     for model in MODELS:
         series = pd.to_numeric(
             frame.loc[frame["model"] == model, source_column], errors="coerce"
         ).dropna()
-
-        # Temporary source-data workaround requested on 2026-08-13. Remove once
-        # scgpt!PRnet run 3 is present in scFM-all-source-iid-sample.xlsx.
-        if (
-            split_key == "iid-sample"
-            and representation_key == "scgpt"
-            and model == "PRnet"
-            and len(series) == 2
-        ):
-            series = pd.concat([series, series.iloc[[1]]], ignore_index=True)
 
         values[model] = round(float(series.mean()), 10) if len(series) else None
     return values
@@ -121,9 +111,6 @@ def main():
         "notes": {
             "aggregation": "Mean of three runs",
             "rawOnlyModels": ["baseMean", "PrePR-CT"],
-            "temporaryImputation": (
-                "IID sample / scGPT / PRnet run 3 temporarily duplicates run 2."
-            ),
         },
     }
 
@@ -149,8 +136,6 @@ def main():
                 metric_results[representation_key] = mean_by_model(
                     frame,
                     source_column,
-                    split_key,
-                    representation_key,
                 )
             split_results[metric_key] = metric_results
         payload["results"][split_key] = split_results
