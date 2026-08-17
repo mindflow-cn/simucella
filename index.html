@@ -280,9 +280,8 @@
       box-shadow: 0 12px 28px var(--dh-shadow);
     }
     #drughiter-home-sketch .dh-project-card {
-      min-height: 280px;
-      display: grid;
-      grid-template-columns: minmax(180px, .9fr) minmax(0, 1.1fr);
+      min-height: 0;
+      display: block;
       border: 1px solid var(--dh-line);
       border-radius: 8px;
       background: var(--dh-surface);
@@ -296,17 +295,9 @@
       transform: translateY(-2px);
     }
     #drughiter-home-sketch .dh-project-card:focus-visible { outline: 2px solid var(--dh-green); outline-offset: 3px; }
-    #drughiter-home-sketch .dh-project-card-visual {
-      min-height: 280px;
-      display: grid;
-      place-items: center;
-      padding: 16px;
-      background: color-mix(in srgb, var(--dh-green-soft) 42%, var(--dh-page));
-      border-right: 1px solid var(--dh-line);
-    }
-    #drughiter-home-sketch .dh-project-card-visual svg { display: block; width: 100%; height: auto; }
     #drughiter-home-sketch .dh-project-card-body {
       min-width: 0;
+      height: 100%;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -327,8 +318,10 @@
       text-transform: uppercase;
     }
     #drughiter-home-sketch .dh-project-card-platform { color: var(--dh-muted); font-size: 12px; }
+    #drughiter-home-sketch a.dh-project-card-platform:hover { color: var(--dh-green); }
     #drughiter-home-sketch .dh-project-card h3 { margin: 0 0 10px; font-size: 24px; font-weight: 500; }
     #drughiter-home-sketch .dh-project-card p { margin: 0; color: var(--dh-muted); font-size: 14px; line-height: 1.65; }
+    #drughiter-home-sketch .dh-project-card-claim { display: block; margin-bottom: 5px; color: light-dark(#075b42, #76ddb3); font-weight: 700; }
     #drughiter-home-sketch .dh-project-card-facts {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -337,15 +330,26 @@
       border-top: 1px solid var(--dh-line);
       border-bottom: 1px solid var(--dh-line);
     }
+    #drughiter-home-sketch .dh-project-card-facts-dataset { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     #drughiter-home-sketch .dh-project-card-fact strong { display: block; color: var(--dh-green); font-size: 18px; font-weight: 500; }
     #drughiter-home-sketch .dh-project-card-fact span { color: var(--dh-muted); font-size: 11px; }
     #drughiter-home-sketch .dh-project-card-meta {
       justify-content: space-between;
+      margin-top: auto;
       color: var(--dh-muted);
       font-size: 12px;
     }
     #drughiter-home-sketch .dh-project-card-meta strong { color: var(--dh-ink); font-weight: 500; }
-    #drughiter-home-sketch .dh-project-card-agent .dh-project-card-visual { background: color-mix(in srgb, var(--dh-blue-soft) 50%, var(--dh-page)); }
+    #drughiter-home-sketch .dh-project-card-access {
+      padding: 13px 15px;
+      border-left: 3px solid var(--dh-amber);
+      background: var(--dh-amber-soft);
+      color: var(--dh-muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    #drughiter-home-sketch .dh-project-card-access strong { display: block; margin-bottom: 3px; color: var(--dh-amber); font-weight: 600; }
+    #drughiter-home-sketch .dh-project-card-access a { color: var(--dh-blue); text-decoration: underline; text-underline-offset: 2px; }
 
     #drughiter-home-sketch .dh-partners { padding: 38px 0; border-bottom: 1px solid var(--dh-line); }
     #drughiter-home-sketch .dh-partners-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; }
@@ -374,7 +378,6 @@
       #drughiter-home-sketch .dh-featured-media { border-left: 0; border-top: 1px solid var(--dh-line); }
       #drughiter-home-sketch .dh-roadmap-item { grid-template-columns: 42px minmax(150px, .7fr) 1.3fr; }
       #drughiter-home-sketch .dh-roadmap-item .dh-status { grid-column: 2 / 4; justify-self: start; }
-      #drughiter-home-sketch .dh-project-card { grid-template-columns: minmax(160px, .85fr) minmax(0, 1.15fr); }
     }
 
     @media (max-width: 560px) {
@@ -393,8 +396,6 @@
       #drughiter-home-sketch .dh-project-fact:nth-child(n+3) { border-top: 1px solid var(--dh-line); }
       #drughiter-home-sketch .dh-featured-copy { padding: 24px; }
       #drughiter-home-sketch .dh-project-grid { grid-template-columns: 1fr; }
-      #drughiter-home-sketch .dh-project-card { grid-template-columns: 1fr; }
-      #drughiter-home-sketch .dh-project-card-visual { min-height: 220px; border-right: 0; border-bottom: 1px solid var(--dh-line); }
       #drughiter-home-sketch .dh-project-card-body { padding: 24px; }
       #drughiter-home-sketch .dh-partners-inner,
       #drughiter-home-sketch .dh-cta-inner,
@@ -406,8 +407,8 @@
 
   <div class="dh-announcement">
     <div class="dh-announcement-inner">
-      <span class="dh-announcement-label">First benchmark</span>
-      <span>scDrugPerturb-Bench introduces mechanism-aware evaluation for single-cell drug response prediction</span>
+      <span class="dh-announcement-label">scDrugPerturb-Bench</span>
+      <span>The world's largest open drug perturbation prediction dataset with key-gene annotations</span>
       <span aria-hidden="true">&rarr;</span>
     </div>
   </div>
@@ -520,7 +521,7 @@
               <span class="dh-status dh-status-active">Active development</span>
             </div>
             <h3>scDrugPerturb-Bench</h3>
-            <p>Unlike benchmarks built only from expression matrices, scDrugPerturb-Bench links each evaluation case to a biological conclusion extracted from its source paper. It tests whether a model recovers the direction, magnitude and specificity of drug response beyond expression similarity.</p>
+            <p><span class="dh-project-card-claim">The world's largest open drug perturbation prediction dataset with key-gene annotations.</span>Unlike benchmarks built only from expression matrices, scDrugPerturb-Bench links each evaluation case to a biological conclusion extracted from its source paper. It tests whether a model recovers the direction, magnitude and specificity of drug response beyond expression similarity.</p>
             <div class="dh-project-facts">
               <div class="dh-project-fact"><strong>2.5M</strong><span>single cells</span></div>
               <div class="dh-project-fact"><strong>181</strong><span>datasets</span></div>
@@ -554,89 +555,30 @@
           <div><h2>Open tools for the research community.</h2></div>
         </div>
         <div class="dh-project-grid" aria-label="Open research projects">
-          <a class="dh-project-card" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer" aria-label="Open the scDrugPerturb-Bench dataset on Hugging Face">
-            <div class="dh-project-card-visual" aria-hidden="true">
-              <svg viewBox="0 0 320 250" role="presentation">
-                <rect x="0" y="0" width="320" height="250" rx="12" fill="var(--dh-page)" />
-                <g fill="none" stroke="var(--dh-line)" stroke-width="1" opacity=".72">
-                  <path d="M28 204H292M28 204V28" />
-                  <path d="M28 160H292M28 116H292M28 72H292" opacity=".55" />
-                </g>
-                <g fill="none" stroke="var(--dh-blue)" stroke-width="2" opacity=".44">
-                  <path d="M76 164C98 146 102 115 126 103S163 92 182 65S221 59 257 43" />
-                  <path d="M89 187C121 165 136 156 156 130S188 109 211 93" />
-                </g>
-                <g fill="var(--dh-green)" opacity=".88">
-                  <circle cx="70" cy="170" r="6"/><circle cx="84" cy="157" r="4"/><circle cx="96" cy="168" r="5"/>
-                  <circle cx="104" cy="145" r="4"/><circle cx="113" cy="132" r="6"/><circle cx="124" cy="144" r="4"/>
-                  <circle cx="133" cy="116" r="5"/><circle cx="144" cy="104" r="4"/><circle cx="154" cy="119" r="6"/>
-                </g>
-                <g fill="var(--dh-blue)" opacity=".9">
-                  <circle cx="180" cy="82" r="5"/><circle cx="192" cy="67" r="4"/><circle cx="205" cy="76" r="6"/>
-                  <circle cx="216" cy="55" r="4"/><circle cx="230" cy="61" r="5"/><circle cx="245" cy="47" r="4"/>
-                  <circle cx="257" cy="55" r="6"/><circle cx="270" cy="40" r="4"/>
-                </g>
-                <g fill="var(--dh-amber)" opacity=".94">
-                  <circle cx="206" cy="145" r="5"/><circle cx="220" cy="132" r="4"/><circle cx="232" cy="143" r="6"/>
-                  <circle cx="246" cy="122" r="4"/><circle cx="259" cy="132" r="5"/><circle cx="273" cy="113" r="4"/>
-                </g>
-                <g fill="var(--dh-muted)" opacity=".55">
-                  <circle cx="52" cy="185" r="3"/><circle cx="61" cy="151" r="3"/><circle cx="142" cy="160" r="3"/>
-                  <circle cx="168" cy="98" r="3"/><circle cx="188" cy="123" r="3"/><circle cx="286" cy="96" r="3"/>
-                </g>
-              </svg>
-            </div>
+          <article class="dh-project-card" aria-label="scDrugPerturb-Bench dataset">
             <div class="dh-project-card-body">
               <div class="dh-project-card-top">
                 <span class="dh-project-card-type">Dataset</span>
-                <span class="dh-project-card-platform">Hugging Face <span aria-hidden="true">&nearr;</span></span>
+                <a class="dh-project-card-platform" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Hugging Face <span aria-hidden="true">&nearr;</span></a>
               </div>
               <div>
                 <h3>scDrugPerturb-Bench</h3>
-                <p>A curated, versioned single-cell drug perturbation dataset for benchmarking predictive models across compounds and biological contexts.</p>
+                <p><span class="dh-project-card-claim">The world's largest open drug perturbation prediction dataset with key-gene annotations.</span>Built for mechanism-aware benchmarking across compounds and biological contexts.</p>
               </div>
-              <div class="dh-project-card-facts" aria-label="Dataset scale">
+              <div class="dh-project-card-facts dh-project-card-facts-dataset" aria-label="Dataset scale">
                 <div class="dh-project-card-fact"><strong>2.5M</strong><span>single cells</span></div>
                 <div class="dh-project-card-fact"><strong>181</strong><span>datasets</span></div>
                 <div class="dh-project-card-fact"><strong>101</strong><span>drugs</span></div>
+                <div class="dh-project-card-fact"><strong>717</strong><span>annotated key genes</span></div>
+              </div>
+              <div class="dh-project-card-access">
+                <strong>Public sample</strong>
+                Twenty representative cases from cell-line studies are currently available on Hugging Face. For access to the full dataset, contact <a href="mailto:mindflow.ai.lab@gmail.com">mindflow.ai.lab@gmail.com</a>.
               </div>
               <div class="dh-project-card-meta"><strong>v1 released</strong><span>Ongoing maintenance</span></div>
             </div>
-          </a>
+          </article>
           <article class="dh-project-card dh-project-card-agent" aria-label="Data collection agent project, currently in development">
-            <div class="dh-project-card-visual" aria-hidden="true">
-              <svg viewBox="0 0 320 250" role="presentation">
-                <rect x="0" y="0" width="320" height="250" rx="12" fill="var(--dh-page)" />
-                <g fill="none" stroke="var(--dh-line)" stroke-width="1" opacity=".68">
-                  <path d="M28 46H292M28 204H292" />
-                  <path d="M68 46V204M160 46V204M252 46V204" opacity=".45" />
-                </g>
-                <g fill="none" stroke="var(--dh-blue)" stroke-width="2" opacity=".8">
-                  <path d="M88 125H136" />
-                  <path d="M184 125H232" />
-                  <path d="M128 119L136 125L128 131M224 119L232 125L224 131" />
-                </g>
-                <g stroke-width="2">
-                  <rect x="30" y="91" width="74" height="68" rx="8" fill="var(--dh-green-soft)" stroke="var(--dh-green)" />
-                  <rect x="123" y="91" width="74" height="68" rx="8" fill="var(--dh-blue-soft)" stroke="var(--dh-blue)" />
-                  <rect x="216" y="91" width="74" height="68" rx="8" fill="var(--dh-amber-soft)" stroke="var(--dh-amber)" />
-                </g>
-                <g fill="var(--dh-ink)" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle">
-                  <text x="67" y="120">Studies</text><text x="67" y="137">discover</text>
-                  <text x="160" y="120">Evidence</text><text x="160" y="137">curation</text>
-                  <text x="253" y="120">Matrix</text><text x="253" y="137">structure</text>
-                </g>
-                <g fill="var(--dh-green)" opacity=".85">
-                  <circle cx="46" cy="72" r="4"/><circle cx="59" cy="64" r="3"/><circle cx="74" cy="72" r="5"/><circle cx="88" cy="63" r="3"/>
-                </g>
-                <g fill="var(--dh-blue)" opacity=".85">
-                  <circle cx="141" cy="184" r="4"/><circle cx="155" cy="191" r="3"/><circle cx="169" cy="183" r="5"/><circle cx="183" cy="191" r="3"/>
-                </g>
-                <g fill="var(--dh-amber)" opacity=".85">
-                  <circle cx="235" cy="72" r="4"/><circle cx="249" cy="64" r="3"/><circle cx="264" cy="72" r="5"/><circle cx="278" cy="63" r="3"/>
-                </g>
-              </svg>
-            </div>
             <div class="dh-project-card-body">
               <div class="dh-project-card-top">
                 <span class="dh-project-card-type">Agent</span>
