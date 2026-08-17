@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 620" role="img" aria-labelledby="title desc">
+  <title id="title">Mechanism annotation schematic for scDrugPerturb-Bench</title>
+  <desc id="desc">A schematic showing how a drug perturbation case is annotated with source evidence, cellular context, dose and time, key genes, direction, measured response and model evaluation.</desc>
+  <defs>
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#173027" flood-opacity=".10"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#0d7757"/>
+    </marker>
+    <linearGradient id="matrix" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e7efff"/>
+      <stop offset="1" stop-color="#e1f0e9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="880" height="620" fill="#fbfcfb"/>
+  <rect x="28" y="28" width="824" height="564" fill="#fff" stroke="#d5dfda"/>
+
+  <text x="58" y="76" fill="#0c1a15" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Mechanism annotation for every perturbation case</text>
+  <text x="58" y="104" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="15">Drug, context and literature evidence are converted into benchmark-ready key-gene response labels.</text>
+
+  <g filter="url(#soft-shadow)">
+    <rect x="58" y="142" width="226" height="126" rx="8" fill="#ffffff" stroke="#d5dfda"/>
+    <text x="82" y="175" fill="#0d7757" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">SOURCE EVIDENCE</text>
+    <text x="82" y="206" fill="#0c1a15" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Paper-backed claim</text>
+    <text x="82" y="232" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">Figures, result text and</text>
+    <text x="82" y="250" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">supplementary materials</text>
+
+    <rect x="328" y="142" width="226" height="126" rx="8" fill="#ffffff" stroke="#d5dfda"/>
+    <text x="352" y="175" fill="#2459b8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">PERTURBATION CONTEXT</text>
+    <text x="352" y="206" fill="#0c1a15" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Drug + cell state</text>
+    <text x="352" y="232" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">Compound, dose, time,</text>
+    <text x="352" y="250" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">cell type and tissue source</text>
+
+    <rect x="598" y="142" width="226" height="126" rx="8" fill="#ffffff" stroke="#d5dfda"/>
+    <text x="622" y="175" fill="#996000" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">MEASURED RESPONSE</text>
+    <text x="622" y="206" fill="#0c1a15" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Single-cell matrix</text>
+    <text x="622" y="232" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">Matched control and</text>
+    <text x="622" y="250" fill="#5b6b64" font-family="Inter, Arial, sans-serif" font-size="12">drug-treated expression</text>
+  </g>
+
+  <path d="M286 205h38" stroke="#0d7757" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M556 205h38" stroke="#0d7757" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+  <path d="M441 269v42" stroke="#0d7757" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(88 316)">
+    <rect width="704" height="166" rx="10" fill="url(#matrix)" stroke="#b9d1c8"/>
+    <text x="28" y="42" fill="#0c1a15" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="750">Curated mechanism label</text>
+    <text x="28" y="68" fill="#56665f" font-family="Inter, Arial, sans-serif" font-size="13">A response case is retained only when literature evidence and measured expression agree.</text>
+
+    <g font-family="Inter, Arial, sans-serif">
+      <rect x="30" y="94" width="118" height="42" rx="21" fill="#ffffff" stroke="#8cc0ad"/>
+      <text x="53" y="120" fill="#0d7757" font-size="15" font-weight="800">ABCA1 ↑</text>
+      <rect x="164" y="94" width="118" height="42" rx="21" fill="#ffffff" stroke="#8cc0ad"/>
+      <text x="190" y="120" fill="#0d7757" font-size="15" font-weight="800">APOE ↑</text>
+      <rect x="298" y="94" width="128" height="42" rx="21" fill="#ffffff" stroke="#e0bd69"/>
+      <text x="321" y="120" fill="#996000" font-size="15" font-weight="800">NEUROG3 ↑</text>
+      <rect x="442" y="94" width="126" height="42" rx="21" fill="#ffffff" stroke="#e2aaa4"/>
+      <text x="468" y="120" fill="#a6463d" font-size="15" font-weight="800">MKI67 ↓</text>
+      <rect x="584" y="94" width="88" height="42" rx="21" fill="#ffffff" stroke="#9fb8e8"/>
+      <text x="609" y="120" fill="#2459b8" font-size="15" font-weight="800">NS</text>
+    </g>
+  </g>
+
+  <path d="M440 482v38" stroke="#2459b8" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+
+  <g transform="translate(118 528)" font-family="Inter, Arial, sans-serif">
+    <rect width="644" height="42" rx="7" fill="#10271f"/>
+    <text x="26" y="27" fill="#dff7ec" font-size="14" font-weight="800">Evaluate recovery:</text>
+    <text x="206" y="27" fill="#dff7ec" font-size="14" font-weight="700">direction</text>
+    <text x="314" y="27" fill="#dff7ec" font-size="14" font-weight="700">magnitude</text>
+    <text x="438" y="27" fill="#dff7ec" font-size="14" font-weight="700">specificity</text>
+    <text x="552" y="27" fill="#dff7ec" font-size="14" font-weight="700">pathways</text>
+  </g>
+</svg>

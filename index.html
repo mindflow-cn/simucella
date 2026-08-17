@@ -138,6 +138,14 @@
       line-height: 1.7;
       margin: 0;
     }
+    #drughiter-home-sketch .dh-project-intro {
+      max-width: 610px;
+      margin: 18px 0 0;
+      color: var(--dh-ink);
+      font-size: 18px;
+      line-height: 1.72;
+      font-weight: 500;
+    }
     #drughiter-home-sketch .dh-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     #drughiter-home-sketch .dh-action {
       min-height: 42px;
@@ -320,6 +328,8 @@
     #drughiter-home-sketch .dh-project-card-platform { color: var(--dh-muted); font-size: 12px; }
     #drughiter-home-sketch a.dh-project-card-platform:hover { color: var(--dh-green); }
     #drughiter-home-sketch .dh-project-card h3 { margin: 0 0 10px; font-size: 24px; font-weight: 500; }
+    #drughiter-home-sketch .dh-project-card h3 a { color: inherit; text-decoration: none; }
+    #drughiter-home-sketch .dh-project-card h3 a:hover { color: var(--dh-green); }
     #drughiter-home-sketch .dh-project-card p { margin: 0; color: var(--dh-muted); font-size: 14px; line-height: 1.65; }
     #drughiter-home-sketch .dh-project-card-claim { display: block; margin-bottom: 5px; color: light-dark(#075b42, #76ddb3); font-weight: 700; }
     #drughiter-home-sketch .dh-project-card-facts {
@@ -434,7 +444,7 @@
           <div class="dh-hero-copy">
             <div class="dh-eyebrow">AI for Biology</div>
             <h1>Build the <span>Virtual Cell</span></h1>
-            <p>Simucella develops open perturbation datasets, predictive models and multi-omics systems for understanding cellular response and advancing AI-driven drug discovery.</p>
+            <p class="dh-project-intro">Our vision is to build an intelligent virtual cell that can reason over biological mechanisms, simulate cellular responses and help solve the most complex challenges in biopharmaceutical discovery and development.</p>
             <div class="dh-actions">
               <a class="dh-action dh-action-primary" href="#dh-roadmap">Explore our roadmap <span aria-hidden="true">&rarr;</span></a>
               <a class="dh-action" href="#dh-publications">scDrugPerturb-Bench</a>
@@ -477,7 +487,7 @@
             <div class="dh-roadmap-num">03</div>
             <h3>Gene perturbation datasets</h3>
             <p>Versioned genetic-intervention datasets with biological context, provenance, evidence and reproducible splits.</p>
-            <span class="dh-status dh-status-prep">Next</span>
+            <span class="dh-status dh-status-prep">In progress</span>
           </article>
           <article class="dh-roadmap-item">
             <div class="dh-roadmap-num">04</div>
@@ -487,20 +497,14 @@
           </article>
           <article class="dh-roadmap-item">
             <div class="dh-roadmap-num">05</div>
-            <h3>Drug perturbation models</h3>
-            <p>Mechanism-aware models for predicting cellular response across compounds, doses, cell states and experimental systems.</p>
-            <span class="dh-status dh-status-planned">Planned</span>
+            <h3>Perturbation prediction models</h3>
+            <p>Mechanism-aware models for predicting cellular response across drug and gene perturbations, spanning compounds, doses, cell states and experimental systems.</p>
+            <span class="dh-status dh-status-prep">In progress</span>
           </article>
           <article class="dh-roadmap-item">
             <div class="dh-roadmap-num">06</div>
-            <h3>Gene perturbation models</h3>
-            <p>Models of causal gene programs and genetic interventions that complement compound-level perturbation learning.</p>
-            <span class="dh-status dh-status-planned">Planned</span>
-          </article>
-          <article class="dh-roadmap-item">
-            <div class="dh-roadmap-num">07</div>
-            <h3>AI-driven drug discovery</h3>
-            <p>Evaluation tasks and models for compound retrieval, target discovery, response prediction and therapeutic development.</p>
+            <h3>Applications</h3>
+            <p>Virtual-cell applications for drug discovery tasks such as compound retrieval, target discovery, response prediction and therapeutic prioritization.</p>
             <span class="dh-status dh-status-planned">Long-term</span>
           </article>
         </div>
@@ -509,9 +513,8 @@
 
     <section class="dh-section" id="dh-publications">
       <div class="dh-shell">
-        <div class="dh-section-head">
+        <div class="dh-section-head" style="grid-template-columns:190px; margin-bottom:22px;">
           <div class="dh-section-kicker">Publication</div>
-          <div><h2>Start with mechanisms, not reconstruction alone.</h2></div>
         </div>
 
         <article class="dh-featured">
@@ -520,8 +523,8 @@
               <span class="dh-featured-type">Preprint</span>
               <span class="dh-status dh-status-active">Active development</span>
             </div>
-            <h3>scDrugPerturb-Bench</h3>
-            <p><span class="dh-project-card-claim">The world's largest open drug perturbation prediction dataset with key-gene annotations.</span>Unlike benchmarks built only from expression matrices, scDrugPerturb-Bench links each evaluation case to a biological conclusion extracted from its source paper. It tests whether a model recovers the direction, magnitude and specificity of drug response beyond expression similarity.</p>
+            <h3>Systematic benchmarking reveals limited recovery of drug-response mechanisms in single-cell perturbation models</h3>
+            <p>Unlike benchmarks built only from expression matrices, scDrugPerturb-Bench links each evaluation case to a biological conclusion extracted from its source paper. It tests whether a model recovers the direction, magnitude and specificity of drug response beyond expression similarity.</p>
             <div class="dh-project-facts">
               <div class="dh-project-fact"><strong>2.5M</strong><span>single cells</span></div>
               <div class="dh-project-fact"><strong>181</strong><span>datasets</span></div>
@@ -550,9 +553,8 @@
 
     <section class="dh-section" id="dh-projects">
       <div class="dh-shell">
-        <div class="dh-section-head">
+        <div class="dh-section-head" style="grid-template-columns:190px; margin-bottom:22px;">
           <div class="dh-section-kicker">Projects</div>
-          <div><h2>Open tools for the research community.</h2></div>
         </div>
         <div class="dh-project-grid" aria-label="Open research projects">
           <article class="dh-project-card" aria-label="scDrugPerturb-Bench dataset">
@@ -562,8 +564,12 @@
                 <a class="dh-project-card-platform" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Hugging Face <span aria-hidden="true">&nearr;</span></a>
               </div>
               <div>
-                <h3>scDrugPerturb-Bench</h3>
-                <p><span class="dh-project-card-claim">The world's largest open drug perturbation prediction dataset with key-gene annotations.</span>Built for mechanism-aware benchmarking across compounds and biological contexts.</p>
+                <h3><a href="scdrugperturb-bench.html">The largest open atlas for mechanism-aware single-cell drug perturbation prediction.</a></h3>
+                <p>Built for mechanism-aware benchmarking across compounds and biological contexts.</p>
+              </div>
+              <div class="dh-actions" style="margin-top:0;">
+                <a class="dh-action dh-action-primary" href="scdrugperturb-bench.html">Dataset details <span aria-hidden="true">&rarr;</span></a>
+                <a class="dh-action" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Hugging Face</a>
               </div>
               <div class="dh-project-card-facts dh-project-card-facts-dataset" aria-label="Dataset scale">
                 <div class="dh-project-card-fact"><strong>2.5M</strong><span>single cells</span></div>

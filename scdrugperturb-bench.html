@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detailed introduction to scDrugPerturb-Bench, an open atlas for mechanism-aware single-cell drug perturbation prediction.">
+  <meta property="og:title" content="scDrugPerturb-Bench Dataset | Simucella">
+  <meta property="og:description" content="An open atlas for mechanism-aware single-cell drug perturbation prediction.">
+  <meta property="og:image" content="assets/scdrugperturb-mechanism-atlas.svg">
+  <title>scDrugPerturb-Bench Dataset | Simucella</title>
+  <link rel="stylesheet" href="paper.css?v=20260812-2">
+  <style>
+    .dataset-hero-grid { width:min(100% - 48px,1180px); margin:0 auto; padding:52px 0 42px; display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,360px); gap:48px; align-items:center; }
+    .dataset-hero-copy h1 { max-width:820px; margin:14px 0 20px; font-size:56px; line-height:1.04; font-weight:550; }
+    .dataset-hero-copy .paper-deck { max-width:760px; }
+    .dataset-hero-figure { margin:0; border:1px solid var(--line); background:#fff; box-shadow:var(--shadow); }
+    .dataset-hero-figure img { display:block; width:100%; max-height:500px; object-fit:contain; padding:16px; background:#fff; }
+    .dataset-hero-figure figcaption { padding:0 14px 14px; color:var(--muted); font-size:11px; line-height:1.4; }
+    .dataset-stat-grid { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .dataset-stat { min-height:120px; padding:18px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); background:rgba(255,255,255,.64); }
+    .dataset-stat strong { display:block; color:var(--green); font-size:32px; line-height:1; font-weight:600; }
+    .dataset-stat span { display:block; margin-top:10px; color:var(--muted); font-size:12px; line-height:1.35; }
+    .dataset-feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; border:1px solid var(--line); background:var(--line); }
+    .dataset-feature { padding:22px; background:var(--surface); }
+    .dataset-feature h3 { margin:0 0 8px; font-size:19px; line-height:1.25; }
+    .dataset-feature p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+    .dataset-bar-list { display:grid; gap:14px; margin-top:22px; }
+    .dataset-bar { display:grid; grid-template-columns:150px minmax(0,1fr) 54px; gap:14px; align-items:center; color:var(--muted); font-size:13px; }
+    .dataset-bar-track { height:9px; background:#e8f0ec; border-radius:999px; overflow:hidden; }
+    .dataset-bar-fill { height:100%; background:var(--green); border-radius:999px; }
+    .dataset-note { margin-top:18px; color:var(--muted); font-size:13px; line-height:1.55; }
+    .dataset-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    .dataset-pill-row span { padding:6px 9px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--muted); font-size:12px; font-weight:600; }
+    .dataset-response-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; margin-top:22px; border:1px solid var(--line); background:var(--line); }
+    .dataset-response { padding:18px; background:#fff; }
+    .dataset-response strong { display:block; color:var(--blue); font-size:28px; line-height:1; }
+    .dataset-response span { display:block; margin-top:9px; color:var(--muted); font-size:12px; }
+    .dataset-action-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    @media (max-width:900px) {
+      .dataset-hero-grid { grid-template-columns:1fr; padding-top:42px; padding-bottom:36px; }
+      .dataset-hero-figure { width:min(100%,420px); }
+      .dataset-stat-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .dataset-feature-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:620px) {
+      .dataset-hero-grid { width:min(100% - 30px,1180px); }
+      .dataset-hero-copy h1 { font-size:40px; }
+      .dataset-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .dataset-bar { grid-template-columns:1fr 48px; }
+      .dataset-bar span:first-child { grid-column:1 / -1; }
+      .dataset-response-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <a class="paper-skip" href="#dataset-main">Skip to content</a>
+  <header class="paper-header">
+    <nav class="paper-nav" aria-label="Dataset navigation">
+      <a class="paper-brand" href="index.html"><img class="paper-logo" src="assets/simucella-logo.svg" alt="Simucella"></a>
+      <div class="paper-nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#annotations">Annotations</a>
+        <a href="#access">Access</a>
+        <a class="paper-home" href="index.html#dh-projects">Projects</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="dataset-main">
+    <section class="paper-hero">
+      <div class="dataset-hero-grid">
+        <div class="dataset-hero-copy">
+          <div class="paper-eyebrow">scDrugPerturb-Bench / Dataset</div>
+          <h1>The largest open atlas for mechanism-aware single-cell drug perturbation prediction.</h1>
+          <p class="paper-deck"><strong>scDrugPerturb-Bench links expression matrices to literature-backed biological mechanisms.</strong> Each retained case connects drug, dose, time, cellular context and key-gene response evidence, making the dataset useful for building and evaluating intelligent virtual-cell models.</p>
+          <div class="dataset-action-row">
+            <a class="paper-action paper-action-primary" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Open sample dataset <span aria-hidden="true">&nearr;</span></a>
+            <a class="paper-action" href="paper.html">Research page <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="paper-hero-meta" aria-label="Dataset metadata"><span>Versioned resource</span><span>Mechanism-aware annotations</span><span>Single-cell RNA-seq</span></div>
+        </div>
+        <figure class="dataset-hero-figure">
+          <img src="assets/fig1c.svg" alt="Comparison of scDrugPerturb-Bench with representative perturbation prediction datasets across data coverage and mechanism annotation.">
+          <figcaption>Figure 1c. Data coverage and mechanism annotation compared with representative perturbation-prediction datasets.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt" id="overview">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">At a glance</div>
+          <div>
+            <h2>Large scale, but built around evidence rather than size alone.</h2>
+            <p>The benchmark starts from more than 50,000 PubMed records and retains manually verified studies where measured single-cell responses are aligned with experimentally supported drug-response mechanisms.</p>
+          </div>
+        </div>
+        <div class="dataset-stat-grid" aria-label="scDrugPerturb-Bench scale">
+          <div class="dataset-stat"><strong>2.5M</strong><span>single cells after unified processing</span></div>
+          <div class="dataset-stat"><strong>181</strong><span>drug perturbation datasets</span></div>
+          <div class="dataset-stat"><strong>93</strong><span>source studies retained</span></div>
+          <div class="dataset-stat"><strong>101</strong><span>curated drugs</span></div>
+          <div class="dataset-stat"><strong>137</strong><span>cellular contexts</span></div>
+          <div class="dataset-stat"><strong>717</strong><span>unique annotated key genes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Construction</div>
+          <div>
+            <h2>From literature to benchmark-ready matrices.</h2>
+            <p>The curation workflow extracts biological claims from papers, connects them to single-cell matrices, verifies the measured response and removes cases where literature evidence and expression data disagree.</p>
+          </div>
+        </div>
+        <figure class="paper-figure">
+          <img src="assets/web/fig1a.webp" alt="Data collection workflow for scDrugPerturb-Bench.">
+          <figcaption>Data-collection workflow. Candidate studies are retrieved, screened, processed, manually verified, cleaned and quality controlled before entering the benchmark.</figcaption>
+        </figure>
+        <div class="dataset-feature-grid" style="margin-top:22px;">
+          <article class="dataset-feature">
+            <h3>Literature-grounded cases</h3>
+            <p>Each case records the cellular context, drug identity, dose, time and post-perturbation gene changes supported by the source paper.</p>
+          </article>
+          <article class="dataset-feature">
+            <h3>Matched expression matrices</h3>
+            <p>The final resource includes matched control matrices, drug-perturbed matrices, drug metadata and curated response annotations.</p>
+          </article>
+          <article class="dataset-feature">
+            <h3>Unified processing</h3>
+            <p>All retained data pass through a consistent workflow for cell filtering, gene mapping, gene filtering and normalization.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt" id="coverage">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Coverage</div>
+          <div>
+            <h2>Five experimental sources, broad biological context.</h2>
+            <p>The dataset preserves the heterogeneity found in real perturbation studies, from controlled cell-line experiments to organoids, primary cultures and patient-derived samples.</p>
+          </div>
+        </div>
+        <div class="paper-split">
+          <div>
+            <h3 style="margin:0;font-size:24px;">Dataset sources</h3>
+            <div class="dataset-bar-list" aria-label="Dataset source counts">
+              <div class="dataset-bar"><span>Cell lines</span><div class="dataset-bar-track"><div class="dataset-bar-fill" style="width:100%;"></div></div><strong>66</strong></div>
+              <div class="dataset-bar"><span>Primary cultures</span><div class="dataset-bar-track"><div class="dataset-bar-fill" style="width:71%;"></div></div><strong>47</strong></div>
+              <div class="dataset-bar"><span>Organoids</span><div class="dataset-bar-track"><div class="dataset-bar-fill" style="width:71%;"></div></div><strong>47</strong></div>
+              <div class="dataset-bar"><span>Patient samples</span><div class="dataset-bar-track"><div class="dataset-bar-fill" style="width:27%;"></div></div><strong>18</strong></div>
+              <div class="dataset-bar"><span>PDX</span><div class="dataset-bar-track"><div class="dataset-bar-fill" style="width:5%;"></div></div><strong>3</strong></div>
+            </div>
+            <p class="dataset-note">Patient-derived xenograft data are retained as a training source because the category is too small for a standalone test split.</p>
+          </div>
+          <figure class="paper-figure">
+            <img src="assets/fig1d.svg" alt="Dataset-level composition of scDrugPerturb-Bench across sources, tissue groups, platforms, dose-time designs and response cases.">
+            <figcaption>Dataset composition across experimental source, tissue group, profiling platform, dose-time design and response direction.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section" id="annotations">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Annotations</div>
+          <div>
+            <h2>Mechanism-relevant gene changes are the core signal.</h2>
+            <p>Instead of treating expression reconstruction as the only objective, scDrugPerturb-Bench records directionally annotated response genes so predictions can be judged by whether they recover the biology reported in the literature.</p>
+          </div>
+        </div>
+        <div class="paper-split paper-split-reverse">
+          <figure class="paper-figure">
+            <img src="assets/scdrugperturb-annotation-schematic.svg" alt="Mechanism annotation schematic showing source evidence, perturbation context, measured single-cell response, key-gene labels and mechanism recovery evaluation.">
+            <figcaption>Mechanism annotation schematic. Each retained perturbation case connects source evidence, drug context, measured expression and key-gene response labels for mechanism-aware evaluation.</figcaption>
+          </figure>
+          <div>
+            <h3 style="margin:0;font-size:24px;">Curated response cases</h3>
+            <p class="paper-lead">The current benchmark contains <strong>423 directionally annotated response cases</strong>, enabling model evaluation at the level of key genes, gene sets and pathways.</p>
+            <div class="dataset-response-grid" aria-label="Annotated response cases">
+              <div class="dataset-response"><strong>195</strong><span>upregulated response cases</span></div>
+              <div class="dataset-response"><strong>126</strong><span>downregulated response cases</span></div>
+              <div class="dataset-response"><strong>102</strong><span>non-significant response cases</span></div>
+            </div>
+            <div class="dataset-pill-row" aria-label="Profiling platforms">
+              <span>10x Chromium, 135 datasets</span>
+              <span>Combinatorial indexing</span>
+              <span>Drop-seq</span>
+              <span>TempO-LINC</span>
+              <span>Microwell</span>
+              <span>Plate-based assays</span>
+              <span>Multi-platform studies</span>
+            </div>
+            <p class="dataset-note">Experimental designs range from single-dose, single-time measurements to multidose and multitime studies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section paper-section-alt">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Why it matters</div>
+          <div>
+            <h2>Designed for mechanism-aware virtual-cell modeling.</h2>
+            <p>Existing perturbation resources are valuable expression-profile collections, but many do not provide case-specific directional response annotations. scDrugPerturb-Bench couples multi-source perturbation matrices with manually curated mechanism-level evidence.</p>
+          </div>
+        </div>
+        <div class="dataset-feature-grid">
+          <article class="dataset-feature">
+            <h3>Beyond expression similarity</h3>
+            <p>Models can be evaluated on whether they recover response direction, effect magnitude, mechanism specificity and pathway-level response polarity.</p>
+          </article>
+          <article class="dataset-feature">
+            <h3>Generalization-ready splits</h3>
+            <p>The benchmark supports cell-line and source-aware scenarios, including OOD drug, cell, tissue, drug-cell pair and unseen-source settings.</p>
+          </article>
+          <article class="dataset-feature">
+            <h3>Versioned and extensible</h3>
+            <p>The dataset is designed to grow as new single-cell drug perturbation studies and mechanism annotations become available.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="paper-section" id="access">
+      <div class="paper-container">
+        <div class="paper-section-head">
+          <div class="paper-kicker">Access</div>
+          <div>
+            <h2>Public sample available now.</h2>
+            <p>Twenty representative cell-line cases are available on Hugging Face. For access to the full dataset, contact the Simucella team.</p>
+          </div>
+        </div>
+        <div class="paper-resources">
+          <article class="paper-resource">
+            <h3>Dataset sample</h3>
+            <p>Browse the public scDrugPerturb-Bench sample on Hugging Face.</p>
+            <a href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Open Hugging Face dataset</a>
+          </article>
+          <article class="paper-resource">
+            <h3>Research page</h3>
+            <p>Read the benchmark story, mechanism metrics and evaluation results.</p>
+            <a href="paper.html">Open research page</a>
+          </article>
+          <article class="paper-resource">
+            <h3>Full dataset access</h3>
+            <p>Request access, collaborations or dataset questions by email.</p>
+            <a href="mailto:mindflow.ai.lab@gmail.com">mindflow.ai.lab@gmail.com</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="paper-footer">
+    <div class="paper-container paper-footer-inner">
+      <span>Simucella · MindFlow.AI · scDrugPerturb-Bench dataset</span>
+      <a href="index.html">Back to Simucella home</a>
+    </div>
+  </footer>
+</body>
+</html>
