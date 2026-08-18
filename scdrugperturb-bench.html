@@ -76,7 +76,7 @@
           <h1>The largest open atlas for mechanism-aware single-cell drug perturbation prediction.</h1>
           <p class="paper-deck"><strong>scDrugPerturb-Bench is a virtual cell dataset for drug and gene perturbation prediction models.</strong> Each retained case connects drug, dose, time, cellular context and key-gene response evidence, making the dataset useful for building and evaluating intelligent virtual-cell models.</p>
           <div class="dataset-action-row">
-            <a class="paper-action paper-action-primary" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Open sample dataset <span aria-hidden="true">&nearr;</span></a>
+            <a class="paper-action paper-action-primary" href="https://huggingface.co/datasets/mindflow-cn/scDrugPerturb-Bench" target="_blank" rel="noopener noreferrer">Explore the sample dataset <span aria-hidden="true">&nearr;</span></a>
             <a class="paper-action" href="paper.html">Research page <span aria-hidden="true">&rarr;</span></a>
           </div>
           <div class="paper-hero-meta" aria-label="Dataset metadata"><span>Versioned resource</span><span>Mechanism-aware annotations</span><span>Single-cell RNA-seq</span></div>
@@ -118,7 +118,7 @@
           </div>
         </div>
         <figure class="paper-figure">
-          <img src="assets/web/fig1a.webp" alt="Data collection workflow for scDrugPerturb-Bench.">
+          <img src="assets/data_collection_pipeline.svg?v=20260818-1" alt="Data collection workflow for scDrugPerturb-Bench.">
           <figcaption>Data-collection workflow. Candidate studies are retrieved, screened, processed, manually verified, cleaned and quality controlled before entering the benchmark.</figcaption>
         </figure>
         <div class="dataset-feature-grid" style="margin-top:22px;">
@@ -178,8 +178,8 @@
         </div>
         <div class="paper-split paper-split-reverse">
           <figure class="paper-figure">
-            <img src="assets/scdrugperturb-annotation-schematic.svg" alt="Mechanism annotation schematic showing source evidence, perturbation context, measured single-cell response, key-gene labels and mechanism recovery evaluation.">
-            <figcaption>Mechanism annotation schematic. Each retained perturbation case connects source evidence, drug context, measured expression and key-gene response labels for mechanism-aware evaluation.</figcaption>
+            <img src="assets/data_extraction_case.svg?v=20260818-1" alt="Example of extracting drug, dose, cell type, gene-response direction and supporting evidence from a source paper into a structured benchmark record.">
+            <figcaption>Data-extraction case. Evidence from article text, figures and expression results is cross-validated and organized into a structured perturbation record.</figcaption>
           </figure>
           <div>
             <h3 style="margin:0;font-size:24px;">Curated response cases</h3>
