@@ -363,6 +363,22 @@
     }
     #drughiter-home-sketch .dh-project-card-access strong { display: block; margin-bottom: 3px; color: var(--dh-amber); font-weight: 600; }
     #drughiter-home-sketch .dh-project-card-access a { color: var(--dh-blue); text-decoration: underline; text-underline-offset: 2px; }
+    #drughiter-home-sketch .dh-project-card-details {
+      display: grid;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--dh-line);
+    }
+    #drughiter-home-sketch .dh-project-card-detail strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--dh-blue);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    #drughiter-home-sketch .dh-project-card-detail span { color: var(--dh-muted); font-size: 12px; line-height: 1.55; }
 
     #drughiter-home-sketch .dh-cta { background: var(--dh-surface-strong); color: var(--dh-ink-on-strong); padding: 58px 0; }
     #drughiter-home-sketch .dh-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 34px; }
@@ -380,6 +396,7 @@
       #drughiter-home-sketch .dh-nav-links a:not(.dh-nav-github) { display: none; }
       #drughiter-home-sketch .dh-hero-grid,
       #drughiter-home-sketch .dh-featured { grid-template-columns: 1fr; }
+      #drughiter-home-sketch .dh-project-grid { grid-template-columns: 1fr; }
       #drughiter-home-sketch .dh-hero { padding-top: 52px; }
       #drughiter-home-sketch .dh-hero-visual { width: min(100%, 500px); margin-top: 14px; }
       #drughiter-home-sketch .dh-featured-media { border-left: 0; border-top: 1px solid var(--dh-line); }
@@ -402,7 +419,6 @@
       #drughiter-home-sketch .dh-project-fact:nth-child(odd) { border-left: 0; padding-left: 0; }
       #drughiter-home-sketch .dh-project-fact:nth-child(n+3) { border-top: 1px solid var(--dh-line); }
       #drughiter-home-sketch .dh-featured-copy { padding: 24px; }
-      #drughiter-home-sketch .dh-project-grid { grid-template-columns: 1fr; }
       #drughiter-home-sketch .dh-project-card-body { padding: 24px; }
       #drughiter-home-sketch .dh-cta-inner,
       #drughiter-home-sketch .dh-footer-inner { align-items: flex-start; flex-direction: column; }
@@ -579,22 +595,35 @@
               <div class="dh-project-card-meta"><strong>v1 released</strong><span>Ongoing maintenance</span></div>
             </div>
           </article>
-          <article class="dh-project-card dh-project-card-agent" aria-label="Data collection agent project, currently in development">
+          <article class="dh-project-card dh-project-card-agent" aria-label="Paper2Perturb open-source data curation agent">
             <div class="dh-project-card-body">
               <div class="dh-project-card-top">
                 <span class="dh-project-card-type">Agent</span>
-                <span class="dh-project-card-platform">Open source · coming soon</span>
+                <a class="dh-project-card-platform" href="https://github.com/mindflow-cn/paper2perturb" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">&nearr;</span></a>
               </div>
               <div>
-                <h3>Data collection agent</h3>
-                <p>An agentic pipeline for finding perturbation studies, normalizing drug, cell, dose and time metadata, and connecting records to literature-grounded biological evidence.</p>
+                <h3><a href="https://github.com/mindflow-cn/paper2perturb" target="_blank" rel="noopener noreferrer">Paper2Perturb</a></h3>
+                <p>Turn scientific papers and public single-cell datasets into evidence-linked perturbation metadata and standardized h5ad files.</p>
               </div>
-              <div class="dh-project-card-facts" aria-label="Agent workflow">
-                <div class="dh-project-card-fact"><strong>01</strong><span>discover</span></div>
-                <div class="dh-project-card-fact"><strong>02</strong><span>curate</span></div>
-                <div class="dh-project-card-fact"><strong>03</strong><span>structure</span></div>
+              <div class="dh-actions" style="margin-top:0;">
+                <a class="dh-action dh-action-primary" href="https://github.com/mindflow-cn/paper2perturb" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">&nearr;</span></a>
               </div>
-              <div class="dh-project-card-meta"><strong>In development</strong><span>Literature to dataset</span></div>
+              <div class="dh-project-card-facts" aria-label="Project capabilities">
+                <div class="dh-project-card-fact"><strong>6</strong><span>agent skills</span></div>
+                <div class="dh-project-card-fact"><strong>5</strong><span>data sources</span></div>
+                <div class="dh-project-card-fact"><strong>2</strong><span>validation skills</span></div>
+              </div>
+              <div class="dh-project-card-details">
+                <div class="dh-project-card-detail">
+                  <strong>Supported data sources</strong>
+                  <span>GEO · ArrayExpress · Zenodo · CELLxGENE · GitHub</span>
+                </div>
+                <div class="dh-project-card-detail">
+                  <strong>End-to-end workflow</strong>
+                  <span>Paper evidence -&gt; Structural single-cell data -&gt; Reproduce reported results -&gt; Validate paper conclusions</span>
+                </div>
+              </div>
+              <div class="dh-project-card-meta"><strong>Open source</strong><span>Apache 2.0</span></div>
             </div>
           </article>
         </div>
