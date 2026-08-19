@@ -9,7 +9,7 @@
   <meta property="og:description" content="This virtual cell benchmark evaluates drug perturbation prediction models and gene perturbation prediction models against literature-curated mechanism evidence.">
   <meta property="og:image" content="assets/pcs-mse-main.png">
   <title>Systematic benchmarking reveals limited recovery of drug-response mechanisms in single-cell perturbation models | Virtual Cell Benchmark | Simucella</title>
-  <link rel="stylesheet" href="paper.css?v=20260812-2">
+  <link rel="stylesheet" href="paper.css?v=20260818-1">
 </head>
 <body>
   <a class="paper-skip" href="#paper-main">Skip to content</a>
@@ -152,34 +152,36 @@
       <div class="paper-container">
         <div class="paper-section-head">
           <div class="paper-kicker">Benchmark results</div>
-          <div><h2>Compare every model, under every test.</h2><p>Each bar reports the mean across three runs. Choose a data split and metric to compare Raw predictions with nine foundation-model embeddings.</p></div>
+          <div><h2>Mechanism recovery remains limited across settings.</h2><p>Selected benchmark views from the manuscript summarize cell-line generalization, cross-source transfer and the context-dependent effect of frozen single-cell foundation-model representations.</p></div>
         </div>
-        <div class="paper-results-shell">
-          <div class="paper-results-toolbar" aria-label="Benchmark chart controls">
-            <label class="paper-results-field" for="paper-results-split"><span>Data split</span><select id="paper-results-split"></select></label>
-            <label class="paper-results-field" for="paper-results-metric"><span>Metric</span><select id="paper-results-metric"></select></label>
-            <div class="paper-results-direction" id="paper-results-direction" aria-live="polite"></div>
+        <div class="paper-static-results">
+          <div class="paper-static-results-grid">
+            <figure class="paper-static-result-card">
+              <div class="paper-static-result-head"><span>Cell-line generalization</span><h3>Mechanism fidelity remains weak.</h3></div>
+              <div class="paper-static-result-media"><img src="assets/fig4b.svg?v=20260818-1" alt="Mechanism fidelity of Raw, PCA and single-cell foundation-model-enhanced pipelines across IID-sample and OOD-cell settings." loading="eager"></div>
+              <figcaption>Absolute mechanism-fidelity performance across IID-sample and OOD-cell benchmarks.</figcaption>
+            </figure>
+            <figure class="paper-static-result-card">
+              <div class="paper-static-result-head"><span>Cross-source transfer</span><h3>Source shifts expose unstable recovery.</h3></div>
+              <div class="paper-static-result-media"><img src="assets/fig5b.svg?v=20260818-1" alt="Mechanism fidelity of Raw, PCA and single-cell foundation-model-enhanced pipelines in the all-source benchmark." loading="eager"></div>
+              <figcaption>Mechanism recovery in the source-integrated IID-sample benchmark.</figcaption>
+            </figure>
           </div>
-          <div class="paper-results-meta">
-            <p id="paper-results-status">Loading benchmark results&hellip;</p>
-            <span>Raw + 9 embeddings</span>
+          <figure class="paper-static-result-card paper-static-result-wide">
+            <div class="paper-static-result-head"><span>Representation effects</span><h3>Foundation-model gains are local and predictor dependent.</h3></div>
+            <div class="paper-static-result-media"><img src="assets/fig4e.svg?v=20260818-1" alt="Heatmaps showing expression gain, Mechanism Fidelity Score gain and their gap across foundation-model embedding and perturbation-predictor combinations." loading="lazy"></div>
+            <figcaption>Embedding&ndash;predictor gain maps relative to Raw expression input.</figcaption>
+          </figure>
+          <div class="paper-static-results-note">
+            <span>Full explorer</span>
+            <p>The interactive benchmark explorer and machine-readable outputs will be released with the full benchmark.</p>
           </div>
-          <div class="paper-results-ranking" aria-live="polite">
-            <span class="paper-results-ranking-label">Top 5 combinations</span>
-            <ol id="paper-results-top-five"></ol>
-          </div>
-          <div class="paper-results-scroll" tabindex="0" aria-label="Scrollable benchmark chart">
-            <div class="paper-results-chart"><canvas id="paper-results-canvas" role="img" aria-label="Benchmark results grouped bar chart"></canvas></div>
-          </div>
-          <p class="paper-results-note">baseMean and PrePR-CT are evaluated on Raw input only. Scroll horizontally to inspect all models on smaller screens.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="paper-footer"><div class="paper-container paper-footer-inner"><span>scDrugPerturb-Bench / Simucella research program</span><a href="index.html">Back to Simucella home &rarr;</a></div></footer>
-  <script src="assets/vendor/chart.umd.js"></script>
-  <script src="assets/benchmark-results.js"></script>
   <script src="paper.js?v=20260813-5"></script>
 </body>
 </html>
