@@ -20,7 +20,6 @@
       <div class="paper-nav-links">
         <a href="#benchmark">At a glance</a>
         <a href="#complement">Why MFS</a>
-        <a href="#results">Results</a>
         <a class="paper-home" href="index.html">Simucella home</a>
       </div>
     </nav>
@@ -148,37 +147,6 @@
       </div>
     </section>
 
-    <section class="paper-section paper-results-section" id="results">
-      <div class="paper-container">
-        <div class="paper-section-head">
-          <div class="paper-kicker">Benchmark results</div>
-          <div><h2>Mechanism recovery remains limited across settings.</h2><p>Selected benchmark views from the manuscript summarize cell-line generalization, cross-source transfer and the context-dependent effect of frozen single-cell foundation-model representations.</p></div>
-        </div>
-        <div class="paper-static-results">
-          <div class="paper-static-results-grid">
-            <figure class="paper-static-result-card">
-              <div class="paper-static-result-head"><span>Cell-line generalization</span><h3>Mechanism fidelity remains weak.</h3></div>
-              <div class="paper-static-result-media"><img src="assets/fig4b.svg?v=20260818-1" alt="Mechanism fidelity of Raw, PCA and single-cell foundation-model-enhanced pipelines across IID-sample and OOD-cell settings." loading="eager"></div>
-              <figcaption>Absolute mechanism-fidelity performance across IID-sample and OOD-cell benchmarks.</figcaption>
-            </figure>
-            <figure class="paper-static-result-card">
-              <div class="paper-static-result-head"><span>Cross-source transfer</span><h3>Source shifts expose unstable recovery.</h3></div>
-              <div class="paper-static-result-media"><img src="assets/fig5b.svg?v=20260818-1" alt="Mechanism fidelity of Raw, PCA and single-cell foundation-model-enhanced pipelines in the all-source benchmark." loading="eager"></div>
-              <figcaption>Mechanism recovery in the source-integrated IID-sample benchmark.</figcaption>
-            </figure>
-          </div>
-          <figure class="paper-static-result-card paper-static-result-wide">
-            <div class="paper-static-result-head"><span>Representation effects</span><h3>Foundation-model gains are local and predictor dependent.</h3></div>
-            <div class="paper-static-result-media"><img src="assets/fig4e.svg?v=20260818-1" alt="Heatmaps showing expression gain, Mechanism Fidelity Score gain and their gap across foundation-model embedding and perturbation-predictor combinations." loading="lazy"></div>
-            <figcaption>Embedding&ndash;predictor gain maps relative to Raw expression input.</figcaption>
-          </figure>
-          <div class="paper-static-results-note">
-            <span>Full explorer</span>
-            <p>The interactive benchmark explorer and machine-readable outputs will be released with the full benchmark.</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="paper-footer"><div class="paper-container paper-footer-inner"><span>scDrugPerturb-Bench / Simucella research program</span><a href="index.html">Back to Simucella home &rarr;</a></div></footer>
