@@ -14,6 +14,13 @@ __pycache__/
 
 # Local figure-rendering scratch files
 tmp/
+/.codex-p2-rebuild/
+/.codex-tmp/
+/.tmp_ppt_edit/
+/.tmp_ppt_v85/
+/.tmp_ppt_v85_dense/
+/.tmp_ppt_v85_p4/
+/.tmp_ppt_v85_restructure/
 
 # Private benchmark source and machine-readable result data
 assets/exp_data/
